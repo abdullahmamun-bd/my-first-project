@@ -3,126 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN - Portfolio</title>
+    <title>MD. ABDULLAH AL MAMUN - Detailed Portfolio</title>
     <style>
-        :root { --primary-color: #2ea44f; --secondary-color: #24292e; --bg-color: #f6f8fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .portfolio-card { background: white; width: 90%; max-width: 800px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); overflow: hidden; animation: fadeIn 1s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* Header Section */
-        .header { background: var(--secondary-color); color: white; padding: 40px 20px; text-align: center; }
-        .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 4px solid var(--primary-color); margin-bottom: 15px; transition: 0.3s; }
-        .profile-img:hover { transform: scale(1.05); }
-        h1 { margin: 10px 0; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }
-        .tagline { color: var(--primary-color); font-weight: 600; font-size: 1.1em; }
-
-        /* Tabs Section */
-        .tabs { display: flex; background: #eee; border-bottom: 1px solid #ddd; }
-        .tab-btn { flex: 1; padding: 15px; border: none; background: none; cursor: pointer; font-weight: 600; color: #555; transition: 0.3s; border-bottom: 3px solid transparent; }
-        .tab-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); background: white; }
-        .tab-btn:hover { background: #fdfdfd; }
-
-        /* Content Section */
-        .content-area { padding: 30px; min-height: 300px; }
-        .tab-content { display: none; animation: slideIn 0.4s ease-out; }
-        .tab-content.active { display: block; }
-        @keyframes slideIn { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        h2 { color: var(--secondary-color); border-left: 4px solid var(--primary-color); padding-left: 10px; margin-bottom: 20px; font-size: 1.3em; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; color: #444; }
+        :root { --primary: #2ea44f; --dark: #24292e; --text: #333; --bg: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); margin: 0; padding: 0; color: var(--text); }
+        .container { max-width: 900px; margin: 40px auto; background: white; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; }
         
-        /* Skills Badges */
-        .skill-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
-        .skill-item { background: #e8f5e9; color: #1b5e20; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; border: 1px solid #c8e6c9; }
+        /* Profile Header */
+        .hero { background: var(--dark); color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--primary); }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--primary); margin-bottom: 20px; }
+        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; }
+        .title { color: var(--primary); font-size: 1.3em; font-weight: 600; margin-top: 10px; }
 
-        /* Action Buttons */
-        .footer-btns { padding: 20px; text-align: center; background: #fafbfc; border-top: 1px solid #eee; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; color: white; font-weight: 600; font-size: 0.9em; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-        .btn-download { background: #ff5722; }
+        /* Main Sections */
+        .section { padding: 40px; border-bottom: 1px solid #eee; }
+        .section-title { font-size: 1.8em; color: var(--primary); border-left: 6px solid var(--primary); padding-left: 15px; margin-bottom: 30px; text-transform: uppercase; }
+        
+        /* Job Item Styling */
+        .job-card { margin-bottom: 40px; position: relative; padding-left: 20px; border-left: 2px solid #ddd; }
+        .job-card::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--primary); border-radius: 50%; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .company { font-size: 1.4em; font-weight: bold; color: var(--dark); }
+        .job-role { font-size: 1.2em; color: var(--primary); font-weight: 600; margin: 5px 0; }
+        .date { color: #777; font-style: italic; margin-bottom: 15px; }
+        ul { margin: 10px 0; padding-left: 20px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .skill-item { background: #e8f5e9; border: 1px solid #c8e6c9; padding: 15px; border-radius: 8px; font-weight: 600; text-align: center; color: #1b5e20; }
+
+        /* Footer & Buttons */
+        .footer { background: #fafbfc; padding: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn { padding: 15px 30px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-cv { background: #ff5722; }
         .btn-li { background: #0077b5; }
-        .btn-fb { background: #1877f2; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+        @media (max-width: 600px) { .job-header { flex-direction: column; } .container { margin: 0; border-radius: 0; } }
     </style>
 </head>
 <body>
 
-<div class="portfolio-card">
-    <div class="header">
+<div class="container">
+    <div class="hero">
         <img src="https://github.com/abdullahmamun-bd.png" alt="MD. Abdullah Al Mamun" class="profile-img">
         <h1>MD. ABDULLAH AL MAMUN</h1>
-        <p class="tagline">Senior Executive - Supply Chain</p>
-        <p style="font-size: 0.9em; opacity: 0.8;">📍 Tejgaon, Dhaka | 📞 +880 1535-725075</p>
+        <p class="title">Senior Executive - Supply Chain</p>
+        <p>📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
+        <p>📍 Tejgaon, Dhaka, Bangladesh</p>
     </div>
 
-    <div class="tabs">
-        <button class="tab-btn active" onclick="openTab(event, 'summary')">Summary</button>
-        <button class="tab-btn" onclick="openTab(event, 'experience')">Experience</button>
-        <button class="tab-btn" onclick="openTab(event, 'skills')">Skills</button>
-        <button class="tab-btn" onclick="openTab(event, 'education')">Education</button>
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p style="font-size: 1.1em; line-height: 1.8;">
+            Accomplished Logistics, Warehouse, and Supply Chain professional with **over 10 years of experience**. 
+            Expertise in warehouse operations, inventory control, and procurement coordination across food, cement, and industrial sectors. 
+            Proven ability to optimize processes, improve inventory accuracy, and reduce costs while ensuring customer satisfaction.
+        </p>
     </div>
 
-    <div class="content-area">
-        <div id="summary" class="tab-content active">
-            <h2>About Me</h2>
-            [span_0](start_span)<p>Accomplished Logistics, Warehouse, and Supply Chain professional with over 10 years of experience[span_0](end_span). [span_1](start_span)Expert in ERP systems, supply chain planning, and team leadership across multiple industrial sectors[span_1](end_span).</p>
-        </div>
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
 
-        <div id="experience" class="tab-content">
-            <h2>Professional Experience</h2>
-            <div style="margin-bottom: 20px;">
-                <strong>Senior Executive - Supply Chain</strong> | <span style="color: var(--primary-color);">Herfy Bangladesh</span><br>
-                [span_2](start_span)<small>03/2026 - Present[span_2](end_span)</small>
-                <ul>
-                    [span_3](start_span)<li>Manage procurement, inventory, and logistics operations[span_3](end_span).</li>
-                    [span_4](start_span)<li>Align production with demand forecasts through cross-team coordination[span_4](end_span).</li>
-                </ul>
+        <div class="job-card">
+            <div class="job-header">
+                <span class="company">Herfy Bangladesh</span>
+                <span class="date">03/2026 - Present</span>
             </div>
-            <div>
-                <strong>Executive - Warehouse & SCM</strong> | <span style="color: var(--primary-color);">Khaas Food Limited</span><br>
-                [span_5](start_span)<small>06/2025 - 02/2026[span_5](end_span)</small>
-            </div>
-        </div>
-
-        <div id="skills" class="tab-content">
-            <h2>Technical Skills</h2>
-            <ul class="skill-list">
-                [span_6](start_span)<li class="skill-item">ERP & Ibos System[span_6](end_span)</li>
-                [span_7](start_span)<li class="skill-item">Supply Chain Planning[span_7](end_span)</li>
-                [span_8](start_span)<li class="skill-item">Logistics Management[span_8](end_span)</li>
-                [span_9](start_span)<li class="skill-item">Inventory Control[span_9](end_span)</li>
-                [span_10](start_span)<li class="skill-item">Team Leadership[span_10](end_span)</li>
-                [span_11](start_span)<li class="skill-item">Procurement Coordination[span_11](end_span)</li>
+            <div class="job-role">Senior Executive - Supply Chain</div>
+            <ul>
+                <li>Manage end-to-end supply chain operations including procurement, inventory, and logistics.</li>
+                <li>Coordinate with suppliers and internal teams to align production with demand forecasts.</li>
+                <li>Monitor KPIs in ERP systems to optimize operational efficiency.</li>
             </ul>
         </div>
 
-        <div id="education" class="tab-content">
-            <h2>Education & Certifications</h2>
-            [span_12](start_span)<p><strong>PGD in Logistics & Supply Chain Management</strong> (2023-2024)[span_12](end_span)</p>
-            <p><strong>Bachelor (Honors)</strong> | Govt. [span_13](start_span)Bangla College (2019-2023)[span_13](end_span)</p>
+        <div class="job-card">
+            <div class="job-header">
+                <span class="company">Khaas Food Limited</span>
+                <span class="date">06/2025 - 02/2026</span>
+            </div>
+            <div class="job-role">Executive - Warehouse & Supply Chain</div>
+            <ul>
+                <li>Handle daily FG Store demand with Packaging and SCM teams.</li>
+                <li>Maintain product receiving, Bin Cards, and raw material stock.</li>
+                <li>Lead and mentor the warehouse team to ensure brand consistency.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <span class="company">Eon Group of Industries</span>
+                <span class="date">01/2024 - 05/2025</span>
+            </div>
+            <div class="job-role">Officer - Store & Logistics</div>
+            <ul>
+                <li>Record daily inventory (Bin Card) and manage MRR (Material Receive Report).</li>
+                <li>Supervise factory staff for smooth operational activities.</li>
+                <li>Prepare monthly finished goods requirement plans and reports.</li>
+            </ul>
+        </div>
+
+        <div class="job-card" style="border-bottom: none;">
+            <div class="job-header">
+                <span class="company">Akij Resources Limited</span>
+                <span class="date">05/2017 - 12/2023</span>
+            </div>
+            <div class="job-role">Store Keeper / Assistant Officer - Store</div>
+            <ul>
+                <li>Daily, weekly, and monthly inventory reporting to department heads.</li>
+                <li>Manage raw material receiving, stock updates, and compliance monitoring.</li>
+                <li>Coordinate local and imported product planning.</li>
+            </ul>
         </div>
     </div>
 
-    <div class="footer-btns">
-        <a href="Abdullah%20CV%2022-02-2026.pdf" class="btn btn-download" target="_blank">📄 Download CV</a>
-        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn btn-li" target="_blank">LinkedIn</a>
-        <a href="https://www.facebook.com/abdullahalmamun1626/" class="btn btn-fb" target="_blank">Facebook</a>
+    <div class="section">
+        <div class="section-title">Technical Skills & Expertise</div>
+        <div class="skills-grid">
+            <div class="skill-item">ERP & Ibos System</div>
+            <div class="skill-item">Supply Chain Planning</div>
+            <div class="skill-item">Logistics Management</div>
+            <div class="skill-item">Inventory Control</div>
+            <div class="skill-item">Team Leadership</div>
+            <div class="skill-item">Procurement Coordination</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education & Certification</div>
+        <div class="job-card">
+            <div class="job-header"><strong>Postgraduate Diploma in Logistics & SCM</strong> <span>2023-2024</span></div>
+            <p>Focused on logistics operations and supply chain optimization.</p>
+        </div>
+        <div class="job-card">
+            <div class="job-header"><strong>Bachelor (Honors)</strong> <span>2019-2023</span></div>
+            <p>Govt. Bangla College, Dhaka.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="Abdullah%20CV%2022-02-2026.pdf" class="btn btn-cv" target="_blank">📄 Download Full CV</a>
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn btn-li" target="_blank">View LinkedIn Profile</a>
     </div>
 </div>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; tabcontent[i].classList.remove("active"); }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-        document.getElementById(tabName).style.display = "block";
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.className += " active";
-    }
-</script>
 
 </body>
 </html>
