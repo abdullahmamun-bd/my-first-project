@@ -3,49 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Site</title>
+    <title>MD. Abdullah Al Mamun - Portfolio</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f6f8fa;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
         }
-        .card {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
-            border-top: 5px solid #2ea44f;
+            max-width: 350px;
+            border: 1px solid #d0d7de;
         }
-        h1 { color: #333; margin-bottom: 10px; }
-        p { color: #666; font-size: 18px; }
-        .name { font-weight: bold; color: #2ea44f; }
-        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #2ea44f;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h1 { font-size: 24px; color: #1f2328; margin: 10px 0; }
+        p { color: #636c76; font-size: 16px; margin: 5px 0; }
+        .bio { font-style: italic; color: #57606a; margin-top: 10px; }
+        .info-item {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            text-align: left;
+            font-size: 14px;
+        }
+        .info-item b { color: #1f2328; }
         .contact-btn {
-            display: inline-block;
+            display: block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 10px;
             background-color: #2ea44f;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+            border-radius: 6px;
+            font-weight: 600;
         }
-        .contact-btn:hover { background-color: #22863a; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Hello GitHub! 🚀</h1>
-        <p>This is my first project by <span class="name">MD. Abdullah Al Mamun</span></p>
-        <p>Currently learning Web Development.</p>
-        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="contact-btn" target="_blank">Contact Me on LinkedIn</a>
+    <div class="profile-card">
+        <img src="https://github.com/abdullahmamun-bd.png" alt="Profile Picture" class="profile-img">
+        
+        <h1>MD. Abdullah Al Mamun</h1>
+        <p class="bio">Learning Web Development</p>
+        
+        <div class="info-item">
+            <p>🏢 <b>Company:</b> Herfy Bangladesh</p>
+            <p>📍 <b>Location:</b> Tejgaon, Dhaka</p>
+            <p>📧 <b>Email:</b> abdullahmamun9393@gmail.com</p>
+        </div>
+
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="contact-btn" target="_blank">LinkedIn Profile</a>
     </div>
 </body>
 </html>
