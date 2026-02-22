@@ -22,18 +22,22 @@
             text-align: center;
             border-top: 5px solid #2ea44f;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
-            font-size: 18px;
-        }
-        .name {
+        h1 { color: #333; margin-bottom: 10px; }
+        p { color: #666; font-size: 18px; }
+        .name { font-weight: bold; color: #2ea44f; }
+        
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2ea44f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            color: #2ea44f;
+            transition: background 0.3s;
         }
+        .contact-btn:hover { background-color: #22863a; }
     </style>
 </head>
 <body>
@@ -41,6 +45,7 @@
         <h1>Hello GitHub! 🚀</h1>
         <p>This is my first project by <span class="name">MD. Abdullah Al Mamun</span></p>
         <p>Currently learning Web Development.</p>
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="contact-btn" target="_blank">Contact Me on LinkedIn</a>
     </div>
 </body>
 </html>
