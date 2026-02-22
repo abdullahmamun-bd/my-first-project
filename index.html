@@ -5,24 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD. Abdullah Al Mamun - Professional Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .header { text-align: center; border-bottom: 2px solid #2ea44f; padding-bottom: 20px; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #2ea44f; object-fit: cover; }
-        h1 { margin: 10px 0 5px; color: #1f2328; }
-        .tagline { color: #2ea44f; font-weight: bold; font-size: 1.2em; }
-        .section { margin-top: 25px; }
-        .section-title { font-size: 1.3em; color: #2ea44f; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
-        .exp-item, .edu-item { margin-bottom: 15px; }
-        .date { color: #777; font-size: 0.9em; }
+        /* ১. সাধারণ ডিজাইন এবং এনিমেশন */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 6px solid #2ea44f; animation: fadeIn 1.5s ease-in; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .header { text-align: center; margin-bottom: 30px; }
+        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #2ea44f; transition: transform 0.3s; cursor: pointer; }
+        .profile-img:hover { transform: scale(1.1) rotate(5deg); }
+
+        h1 { margin: 15px 0 5px; font-size: 2.2em; color: #1a1a1a; }
+        .tagline { color: #2ea44f; font-weight: 600; font-size: 1.1em; margin-bottom: 20px; }
+
+        /* ২. সেকশন ডিজাইন */
+        .section-title { font-size: 1.4em; color: #2ea44f; border-bottom: 2px solid #e1e4e8; padding-bottom: 8px; margin-top: 30px; margin-bottom: 15px; font-weight: bold; }
+        .exp-item { margin-bottom: 20px; padding: 10px; border-radius: 8px; transition: background 0.3s; }
+        .exp-item:hover { background: #f9f9f9; }
+
+        /* ৩. স্কিল ব্যাজ */
         .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-badge { background: #e8f5e9; color: #2e7d32; padding: 5px 12px; border-radius: 20px; font-size: 0.9em; border: 1px solid #c8e6c9; }
-        .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+        .skill-badge { background: #e8f5e9; color: #1b5e20; padding: 8px 15px; border-radius: 20px; font-weight: 500; font-size: 0.9em; border: 1px solid #c8e6c9; transition: all 0.3s; }
+        .skill-badge:hover { background: #2ea44f; color: white; transform: translateY(-3px); }
+
+        /* ৪. বাটন ডিজাইন */
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 40px; }
+        .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: all 0.3s; display: flex; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        
+        .btn-download { background: #ff5722; } /* CV Download Color */
         .btn-fb { background: #1877F2; }
         .btn-li { background: #0077b5; }
         .btn-email { background: #d44638; }
-        .btn:hover { opacity: 0.8; }
+
+        @media (max-width: 600px) { .container { padding: 20px; } .btn { width: 100%; justify-content: center; } }
     </style>
 </head>
 <body>
@@ -31,57 +47,57 @@
             <img src="https://github.com/abdullahmamun-bd.png" alt="MD. Abdullah Al Mamun" class="profile-img">
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain at Herfy Bangladesh</p>
-            <p>📍 Tejgaon, Dhaka | 📞 +880 1535-725075</p>
+            <p>📍 Tejgaon, Dhaka | 📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
         </div>
 
         <div class="section">
-            <p><i>Accomplished Logistics, Warehouse, and Supply Chain professional with over 10 years of experience across food, cement, and industrial sectors.</i></p>
+            <div class="section-title">Summary</div>
+            [span_4](start_span)<p>Accomplished Logistics, Warehouse, and Supply Chain professional with over 10 years of experience[span_4](end_span). [span_5](start_span)[span_6](start_span)Proven expertise in ERP systems, supply chain planning, and team leadership[span_5](end_span)[span_6](end_span).</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills & Expertise</div>
+            <div class="skills-container">
+                <span class="skill-badge">ERP & Ibos System</span>
+                <span class="skill-badge">Supply Chain Planning</span>
+                <span class="skill-badge">Logistics Management</span>
+                <span class="skill-badge">Inventory Control</span>
+                <span class="skill-badge">Team Leadership</span>
+                <span class="skill-badge">Procurement Coordination</span>
+            </div>
         </div>
 
         <div class="section">
             <div class="section-title">Professional Experience</div>
             <div class="exp-item">
                 <strong>Senior Executive - Supply Chain</strong> | Herfy Bangladesh <br>
-                <span class="date">03/2026 - Present</span>
+                [span_7](start_span)<small>03/2026 - Present</small>[span_7](end_span)
             </div>
             <div class="exp-item">
                 <strong>Executive - Warehouse & Supply Chain</strong> | Khaas Food Limited <br>
-                <span class="date">06/2025 - 02/2026</span>
+                [span_8](start_span)<small>06/2025 - 02/2026</small>[span_8](end_span)
             </div>
             <div class="exp-item">
                 <strong>Officer - Store & Logistics</strong> | Eon Group of Industries <br>
-                <span class="date">01/2024 - 05/2025</span>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Skills & Expertise</div>
-            <div class="skills-container">
-                <span class="skill-badge">ERP (Ibos)</span>
-                <span class="skill-badge">Supply Chain Planning</span>
-                <span class="skill-badge">Logistics Management</span>
-                <span class="skill-badge">Inventory Control</span>
-                <span class="skill-badge">Team Leadership</span>
-                <span class="skill-badge">Reporting</span>
+                [span_9](start_span)<small>01/2024 - 05/2025</small>[span_9](end_span)
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Education</div>
-            <div class="edu-item">
-                <strong>Bachelor (Honors)</strong> | Govt. Bangla College <br>
-                <span class="date">2019 - 2023</span>
+            <div class="exp-item">
+                <strong>Bachelor (Honors)</strong> | Govt. [span_10](start_span)Bangla College (2019-2023)[span_10](end_span)
             </div>
-            <div class="edu-item">
-                <strong>PGD in Logistics & Supply Chain Management</strong> <br>
-                <span class="date">2023 - 2024</span>
+            <div class="exp-item">
+                [span_11](start_span)<strong>PGD in Logistics & Supply Chain Management</strong> (2023-2024)[span_11](end_span)
             </div>
         </div>
 
         <div class="btn-group">
-            <a href="https://www.facebook.com/abdullahalmamun1626/" class="btn btn-fb" target="_blank">Facebook</a>
+            <a href="#" class="btn btn-download" onclick="alert('আপনার সিভি পিডিএফ ফাইলটি আপনার রিপোজিটরিতে আপলোড করলে এই বাটনটি কাজ করবে।')">📄 Download CV</a>
             <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn btn-li" target="_blank">LinkedIn</a>
-            <a href="mailto:abdullahmamun3993@gmail.com" class="btn btn-email">Email Me</a>
+            <a href="https://www.facebook.com/abdullahalmamun1626/" class="btn btn-fb" target="_blank">Facebook</a>
+            <a href="mailto:abdullahmamun3993@gmail.com" class="btn btn-email">Contact Me</a>
         </div>
     </div>
 </body>
