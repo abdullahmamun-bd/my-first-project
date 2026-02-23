@@ -1,133 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN | SCM Expert</title>
-    <style>
-        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
-        
-        .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; background-position: center; height: 320px;
-        }
-        
-        .main-container { max-width: 950px; margin: -160px auto 50px; background: var(--white); border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: hidden; position: relative; }
-        
-        .profile-header { padding: 60px 20px 20px; text-align: center; }
-        
-        /* প্রোফাইল ইমেজ কন্টেইনার ফিক্স */
-        .profile-img-container { 
-            width: 220px; height: 220px; margin: -180px auto 15px; 
-            border-radius: 50%; border: 8px solid var(--white); background: white; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; 
-            display: flex; align-items: flex-end; justify-content: center; /* ছবিকে নিচের দিক থেকে এলাইন করা হয়েছে */
-        }
-        
-        .profile-img { 
-            width: 100%; height: auto; 
-            object-fit: contain; 
-            padding-top: 20px; /* মাথার উপরে জায়গা তৈরি করা হয়েছে যাতে মাথা না কাটে */
-        }
-        
-        h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
-        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD. Abdullah Al Mamun | Supply Chain Professional</title>
 
-        .contact-info { margin-bottom: 20px; }
-        .contact-info p { margin: 5px 0; color: #666; font-size: 0.95em; }
+<style>
+:root {
+    --primary:#2ea44f;
+    --dark:#1a1a1a;
+    --bg:#f4f7f6;
+    --text:#333;
+    --white:#fff;
+}
 
-        /* আপনার মেইলের নিচে বাটন সেটআপ */
-        .hire-btn { 
-            display: inline-block; padding: 8px 22px; 
-            background: var(--primary); color: white; 
-            text-decoration: none; border-radius: 5px; 
-            font-size: 0.9em; font-weight: bold; margin-top: 10px; transition: 0.3s;
-        }
-        .hire-btn:hover { background: #269143; box-shadow: 0 4px 12px rgba(46, 164, 79, 0.3); }
+* { box-sizing: border-box; }
 
-        .section { padding: 40px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
+body {
+    margin:0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
 
-        .exp-item { margin-bottom: 30px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
-        .exp-item::before { content: ''; position: absolute; left: -11px; top: 5px; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
-        
-        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 30px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
-        .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
-        
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 10px; text-align: center; }
-        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
+/* HERO */
+.hero {
+    height:320px;
+    background:
+      linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+}
 
-        .footer { background: var(--dark); padding: 40px; text-align: center; }
-        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; }
-    </style>
+/* MAIN CARD */
+.container {
+    max-width:950px;
+    margin:-160px auto 50px;
+    background:var(--white);
+    border-radius:20px;
+    box-shadow:0 15px 45px rgba(0,0,0,.2);
+    overflow:hidden;
+}
+
+/* PROFILE HEADER */
+.profile {
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.avatar-box {
+    width:220px;
+    height:220px;
+    margin:-180px auto 15px;
+    border-radius:50%;
+    border:8px solid #fff;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    overflow:hidden;
+}
+
+.avatar-box img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top;
+}
+
+h1 {
+    margin:10px 0 5px;
+    font-size:2.4em;
+    font-weight:800;
+}
+
+.tagline {
+    color:var(--primary);
+    font-size:1.2em;
+    font-weight:700;
+}
+
+.contact p {
+    margin:6px 0;
+    color:#666;
+}
+
+.btn-primary {
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 22px;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:700;
+}
+
+.btn-primary:hover {
+    background:#269143;
+}
+
+/* SECTIONS */
+.section {
+    padding:40px;
+    border-top:1px solid #eee;
+}
+
+.section h2 {
+    font-size:1.6em;
+    margin-bottom:20px;
+    color:var(--primary);
+    border-left:6px solid var(--primary);
+    padding-left:15px;
+}
+
+/* EXPERIENCE */
+.exp {
+    margin-bottom:25px;
+    padding-left:22px;
+    border-left:3px solid var(--primary);
+    position:relative;
+}
+
+.exp::before {
+    content:"";
+    width:16px;
+    height:16px;
+    background:var(--primary);
+    border-radius:50%;
+    position:absolute;
+    left:-9px;
+    top:4px;
+}
+
+/* DASHBOARD */
+.stats {
+    background:var(--dark);
+    color:#fff;
+    margin:20px;
+    border-radius:15px;
+    padding:30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+}
+
+.stats h3 {
+    margin:0;
+    font-size:2em;
+    color:var(--primary);
+}
+
+/* FOOTER */
+.footer {
+    background:var(--dark);
+    padding:40px;
+    text-align:center;
+}
+
+.footer a {
+    display:inline-block;
+    margin:8px;
+    padding:12px 25px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:8px;
+}
+
+.linkedin { background:#0077b5; }
+.cv { background:#ff5722; }
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    .stats { grid-template-columns:1fr; gap:20px; }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="hero-bg"></div>
+<div class="hero"></div>
 
-    <div class="main-container">
-        <div class="profile-header">
-            <div class="profile-img-container">
-                <img src="https://github.com/abdullahmamun-bd.png" alt="MD. Abdullah Al Mamun" class="profile-img">
-            </div>
-            <h1>MD. ABDULLAH AL MAMUN</h1>
-            <p class="tagline">Senior Executive - Supply Chain</p>
-            
-            <div class="contact-info">
-                <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
-                <a href="mailto:abdullahmamun3993@gmail.com" class="hire-btn">Hire Me / Express Interest</a>
-            </div>
-        </div>
+<div class="container">
 
-        <div class="section">
-            <h2 class="section-title">Career Summary</h2>
-            <p style="text-align: justify;">
-                Accomplished Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring stock accuracy across industrial and food sectors.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="exp-item">
-                <div style="font-weight: bold; font-size: 1.1em;">Senior Executive – Supply Chain</div>
-                <span style="color: var(--primary); font-weight: 600;">Herfy Bangladesh (Greenwich Dairy Limited)</span>
-                <p style="margin: 5px 0; color: #777;">March 2026 – Present</p>
-            </div>
-            <div class="exp-item">
-                <div style="font-weight: bold; font-size: 1.1em;">Executive – Warehouse & SCM</div>
-                <span style="color: var(--primary); font-weight: 600;">Khaas Food Limited</span>
-                <p style="margin: 5px 0; color: #777;">June 2025 – February 2026</p>
-            </div>
-            <div class="exp-item">
-                <div style="font-weight: bold; font-size: 1.1em;">Assistant Officer – Store</div>
-                <span style="color: var(--primary); font-weight: 600;">Akij Resources Limited (Akij Group)</span>
-                <p style="margin: 5px 0; color: #777;">May 2017 – December 2023</p>
-            </div>
-        </div>
-
-        <div class="dashboard">
-            <div class="dash-item"><h3>99%</h3><p>Inventory Accuracy</p></div>
-            <div class="dash-item"><h3>10+ Yrs</h3><p>Industry Experience</p></div>
-            <div class="dash-item"><h3>ERP</h3><p>Ibos Expert</p></div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Career Milestones</h2>
-            <div class="gallery-grid">
-                <div class="gallery-card"><img src="pic1.jpeg" alt="Akij"><p>Akij Resources</p></div>
-                <div class="gallery-card"><img src="pic2.jpeg" alt="Eon"><p>Eon Group</p></div>
-                <div class="gallery-card"><img src="pic3.jpeg" alt="Khaas"><p>Khaas Food</p></div>
-                <div class="gallery-card"><img src="pic4.jpeg" alt="Farewell"><p>Farewell Team</p></div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;" target="_blank">LinkedIn Profile</a>
-            <a href="Abdullah CV.pdf.pdf" class="btn" style="background:#ff5722;" download>Download CV</a>
-        </div>
+<div class="profile">
+    <div class="avatar-box">
+        <img src="https://avatars.githubusercontent.com/abdullahmamun-bd?s=400"
+             alt="MD. Abdullah Al Mamun">
     </div>
+
+    <h1>MD. ABDULLAH AL MAMUN</h1>
+    <div class="tagline">Senior Executive – Supply Chain</div>
+
+    <div class="contact">
+        <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
+        <a href="mailto:abdullahmamun3993@gmail.com" class="btn-primary">
+            Hire Me / Express Interest
+        </a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Career Summary</h2>
+    <p style="text-align:justify">
+        Supply Chain professional with <b>10+ years of experience</b> in
+        Warehouse Management, Inventory Control, and Logistics.
+        Expert in <b>iBOS ERP</b>, ensuring stock accuracy across
+        industrial and food sectors.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Professional Experience</h2>
+
+    <div class="exp">
+        <strong>Senior Executive – Supply Chain</strong><br>
+        <span style="color:var(--primary)">Herfy Bangladesh (Greenwich Dairy Ltd.)</span><br>
+        <small>March 2026 – Present</small>
+    </div>
+
+    <div class="exp">
+        <strong>Executive – Warehouse & SCM</strong><br>
+        <span style="color:var(--primary)">Khaas Food Limited</span><br>
+        <small>June 2025 – February 2026</small>
+    </div>
+
+    <div class="exp">
+        <strong>Assistant Officer – Store</strong><br>
+        <span style="color:var(--primary)">Akij Resources Limited (Akij Group)</span><br>
+        <small>May 2017 – December 2023</small>
+    </div>
+</div>
+
+<div class="stats">
+    <div>
+        <h3>99%</h3>
+        <p>Inventory Accuracy</p>
+    </div>
+    <div>
+        <h3>10+ Yrs</h3>
+        <p>Industry Experience</p>
+    </div>
+    <div>
+        <h3>ERP</h3>
+        <p>iBOS Expert</p>
+    </div>
+</div>
+
+<div class="footer">
+    <a class="linkedin" target="_blank"
+       href="https://linkedin.com/in/abdullah-al-mamun-529313236">
+        LinkedIn Profile
+    </a>
+    <a class="cv" href="Abdullah-CV.pdf" download>
+        Download CV
+    </a>
+</div>
+
+</div>
+
 </body>
 </html>
