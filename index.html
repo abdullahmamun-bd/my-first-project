@@ -18,17 +18,39 @@
         .main-container { max-width: 950px; margin: -160px auto 50px; background: var(--white); border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: hidden; position: relative; }
         
         .profile-header { padding: 60px 20px 20px; text-align: center; }
-        .profile-img-container { width: 230px; height: 230px; margin: -180px auto 15px; border-radius: 50%; border: 8px solid var(--white); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; }
         
-        /* প্রোফাইল পিকচার ফিক্স: ছবির উপরের অংশ যেন না কাটে */
-        .profile-img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+        /* প্রোফাইল ইমেজ কন্টেইনার */
+        .profile-img-container { 
+            width: 230px; height: 230px; margin: -180px auto 15px; 
+            border-radius: 50%; border: 8px solid var(--white); background: white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; 
+            display: flex; align-items: center; justify-content: center; 
+        }
+        
+        /* ছবি ফিক্স: 'top' পজিশন দিয়ে মাথার অংশ ফ্রেমের ভেতর আনা হয়েছে */
+        .profile-img { 
+            width: 100%; height: 100%; 
+            object-fit: cover; 
+            object-position: top; /* ছবিটিকে ফ্রেমের উপরে সেট করা হয়েছে */
+        }
         
         h1 { margin: 10px 0 5px; font-size: 2.6em; font-weight: 800; color: var(--dark); }
         .tagline { color: var(--primary); font-size: 1.4em; font-weight: bold; margin-bottom: 20px; }
 
-        /* ডিরেক্ট কানেক্ট বাটন */
-        .connect-btn { display: inline-block; padding: 10px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 20px; transition: 0.3s; box-shadow: 0 4px 15px rgba(46, 164, 79, 0.3); }
-        .connect-btn:hover { background: #269143; transform: scale(1.05); }
+        /* আপনার প্রিয় 'Let's Talk' বাটন */
+        .talk-btn { 
+            display: inline-block; padding: 12px 30px; 
+            background: #ff5722; color: white; 
+            text-decoration: none; border-radius: 50px; 
+            font-weight: bold; margin-bottom: 20px; 
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); 
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.7em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
@@ -37,22 +59,19 @@
         .exp-item::before { content: ''; position: absolute; left: -11px; top: 5px; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
         .date { font-weight: bold; color: #666; font-size: 0.95em; }
         .job-title { font-size: 1.25em; font-weight: bold; color: var(--dark); margin: 5px 0; }
-        .company { color: var(--primary); font-weight: 600; font-size: 1.1em; display: block; margin-bottom: 10px; }
-        ul { padding-left: 20px; margin-top: 10px; }
-        li { margin-bottom: 10px; text-align: justify; font-size: 1.05em; }
+        .company { color: var(--primary); font-weight: 600; display: block; margin-bottom: 10px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; text-align: justify; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 15px; }
-        .skill-box { background: var(--bg); padding: 12px; border-radius: 8px; font-weight: 600; text-align: center; border: 1px solid #ddd; }
-
-        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 35px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 10px; }
+        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 35px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
         .dash-item h3 { font-size: 2.2em; color: var(--primary); margin: 0; }
         
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 10px; }
-        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
-        .gallery-card img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 12px; text-align: center; }
+        .gallery-card img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; }
 
         .footer { background: var(--dark); padding: 50px; text-align: center; }
-        .btn { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
     </style>
 </head>
 <body>
@@ -67,7 +86,7 @@
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
             
-            <a href="mailto:abdullahmamun3993@gmail.com" class="connect-btn">Let's Connect & Chat</a>
+            <a href="mailto:abdullahmamun3993@gmail.com" class="talk-btn">📩 Let's Talk!</a>
             
             <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
         </div>
@@ -75,7 +94,7 @@
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
             <p style="text-align: justify; font-size: 1.1em;">
-                Dynamic and result-oriented Supply Chain professional with <b>over 10 years of extensive experience</b> in Warehouse Management, Inventory Control, and Logistics. Proven expertise in optimizing supply chain processes using <b>Ibos ERP</b>, ensuring 100% stock accuracy, and managing large-scale distribution networks.
+                Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring 100% stock accuracy across industrial and food sectors.
             </p>
         </div>
 
@@ -86,8 +105,7 @@
                 <div class="job-title">Senior Executive – Supply Chain</div>
                 <span class="company">Herfy Bangladesh (Greenwich Dairy Limited)</span>
                 <ul>
-                    <li>Leading end-to-end supply chain operations, procurement, and logistics management.</li>
-                    <li>Managing vendor relationships to ensure cost-efficiency and timely delivery.</li>
+                    <li>Leading end-to-end supply chain, procurement, and logistics operations.</li>
                 </ul>
             </div>
             <div class="exp-item">
@@ -95,8 +113,7 @@
                 <div class="job-title">Executive – Warehouse & SCM</div>
                 <span class="company">Khaas Food Limited</span>
                 <ul>
-                    <li>Supervised Raw Materials and FG Store operations using Ibos ERP system.</li>
-                    <li>Maintained 99.9% inventory accuracy through regular cycle counts and audits.</li>
+                    <li>Managed Raw Materials and FG Store operations using Ibos ERP.</li>
                 </ul>
             </div>
             <div class="exp-item">
@@ -104,21 +121,8 @@
                 <div class="job-title">Assistant Officer – Store</div>
                 <span class="company">Akij Resources Limited (Akij Group)</span>
                 <ul>
-                    <li>Led warehouse operations and inventory reporting for industrial raw materials.</li>
-                    <li>Implemented FIFO/FEFO methods to reduce stock wastage.</li>
+                    <li>Optimized warehouse space and implemented FIFO/FEFO methods.</li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Education & Core Skills</h2>
-            <p style="font-size: 1.1em;">🎓 <b>PGD in Logistics & SCM</b> | ISCEA (2023 - 2024)</p>
-            <p style="font-size: 1.1em;">🎓 <b>Bachelor of Arts (Honors)</b> | Govt. Bangla College (2019 - 2023)</p>
-            <div class="skills-grid">
-                <div class="skill-box">Ibos ERP System</div>
-                <div class="skill-box">Inventory Management</div>
-                <div class="skill-box">Logistics & Distribution</div>
-                <div class="skill-box">Team Leadership</div>
             </div>
         </div>
 
