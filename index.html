@@ -18,49 +18,50 @@
         
         .profile-header { padding: 60px 20px 20px; text-align: center; }
         
-        /* প্রোফাইল ইমেজ ফিক্স - মাথা যেন না কাটে */
+        /* প্রোফাইল ইমেজ কন্টেইনার ফিক্স */
         .profile-img-container { 
-            width: 230px; height: 230px; margin: -180px auto 15px; 
+            width: 220px; height: 220px; margin: -180px auto 15px; 
             border-radius: 50%; border: 8px solid var(--white); background: white; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; 
-            display: flex; align-items: center; justify-content: center; 
+            display: flex; align-items: flex-end; justify-content: center; /* ছবিকে নিচের দিক থেকে এলাইন করা হয়েছে */
         }
         
         .profile-img { 
-            width: 110%; /* ছবি কিছুটা বড় করা হয়েছে */
-            height: 110%; 
-            object-fit: cover; 
-            transform: translateY(25px); /* ছবিটিকে ২৫ পিক্সেল নিচে নামিয়ে দেওয়া হয়েছে */
+            width: 100%; height: auto; 
+            object-fit: contain; 
+            padding-top: 20px; /* মাথার উপরে জায়গা তৈরি করা হয়েছে যাতে মাথা না কাটে */
         }
         
-        h1 { margin: 10px 0 5px; font-size: 2.6em; font-weight: 800; color: var(--dark); }
-        .tagline { color: var(--primary); font-size: 1.4em; font-weight: bold; margin-bottom: 10px; }
+        h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
 
-        /* মেইলের নিচে ইন্টারেস্ট বাটন */
-        .mail-link { color: #555; text-decoration: none; font-weight: 500; display: block; margin-bottom: 15px; }
-        .interest-btn { 
-            display: inline-block; padding: 8px 20px; 
-            background: #2ea44f; color: white; 
+        .contact-info { margin-bottom: 20px; }
+        .contact-info p { margin: 5px 0; color: #666; font-size: 0.95em; }
+
+        /* আপনার মেইলের নিচে বাটন সেটআপ */
+        .hire-btn { 
+            display: inline-block; padding: 8px 22px; 
+            background: var(--primary); color: white; 
             text-decoration: none; border-radius: 5px; 
-            font-size: 0.9em; font-weight: bold; transition: 0.3s;
+            font-size: 0.9em; font-weight: bold; margin-top: 10px; transition: 0.3s;
         }
-        .interest-btn:hover { background: #269143; }
+        .hire-btn:hover { background: #269143; box-shadow: 0 4px 12px rgba(46, 164, 79, 0.3); }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.7em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
+        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        .exp-item { margin-bottom: 35px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
+        .exp-item { margin-bottom: 30px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
         .exp-item::before { content: ''; position: absolute; left: -11px; top: 5px; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
         
-        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 35px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
-        .dash-item h3 { font-size: 2.2em; color: var(--primary); margin: 0; }
+        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 30px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
+        .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
         
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 10px; }
-        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 12px; text-align: center; }
-        .gallery-card img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 10px; text-align: center; }
+        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
 
-        .footer { background: var(--dark); padding: 50px; text-align: center; }
-        .btn { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
+        .footer { background: var(--dark); padding: 40px; text-align: center; }
+        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -77,39 +78,39 @@
             
             <div class="contact-info">
                 <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
-                <a href="mailto:abdullahmamun3993@gmail.com" class="interest-btn">✉️ Express Interest / Hire Me</a>
+                <a href="mailto:abdullahmamun3993@gmail.com" class="hire-btn">Hire Me / Express Interest</a>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
-            <p style="text-align: justify; font-size: 1.1em;">
-                Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring 100% stock accuracy across industrial and food sectors.
+            <p style="text-align: justify;">
+                Accomplished Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring stock accuracy across industrial and food sectors.
             </p>
         </div>
 
         <div class="section">
             <h2 class="section-title">Professional Experience</h2>
             <div class="exp-item">
-                <div class="job-title" style="font-weight: bold;">Senior Executive – Supply Chain</div>
-                <span style="color: var(--primary);">Herfy Bangladesh (Greenwich Dairy Limited)</span>
-                <p>March 2026 – Present</p>
+                <div style="font-weight: bold; font-size: 1.1em;">Senior Executive – Supply Chain</div>
+                <span style="color: var(--primary); font-weight: 600;">Herfy Bangladesh (Greenwich Dairy Limited)</span>
+                <p style="margin: 5px 0; color: #777;">March 2026 – Present</p>
             </div>
             <div class="exp-item">
-                <div class="job-title" style="font-weight: bold;">Executive – Warehouse & SCM</div>
-                <span style="color: var(--primary);">Khaas Food Limited</span>
-                <p>June 2025 – February 2026</p>
+                <div style="font-weight: bold; font-size: 1.1em;">Executive – Warehouse & SCM</div>
+                <span style="color: var(--primary); font-weight: 600;">Khaas Food Limited</span>
+                <p style="margin: 5px 0; color: #777;">June 2025 – February 2026</p>
             </div>
             <div class="exp-item">
-                <div class="job-title" style="font-weight: bold;">Assistant Officer – Store</div>
-                <span style="color: var(--primary);">Akij Resources Limited (Akij Group)</span>
-                <p>May 2017 – December 2023</p>
+                <div style="font-weight: bold; font-size: 1.1em;">Assistant Officer – Store</div>
+                <span style="color: var(--primary); font-weight: 600;">Akij Resources Limited (Akij Group)</span>
+                <p style="margin: 5px 0; color: #777;">May 2017 – December 2023</p>
             </div>
         </div>
 
         <div class="dashboard">
-            <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
-            <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
+            <div class="dash-item"><h3>99%</h3><p>Inventory Accuracy</p></div>
+            <div class="dash-item"><h3>10+ Yrs</h3><p>Industry Experience</p></div>
             <div class="dash-item"><h3>ERP</h3><p>Ibos Expert</p></div>
         </div>
 
@@ -124,7 +125,7 @@
         </div>
 
         <div class="footer">
-            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;" target="_blank">LinkedIn</a>
+            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;" target="_blank">LinkedIn Profile</a>
             <a href="Abdullah CV.pdf.pdf" class="btn" style="background:#ff5722;" download>Download CV</a>
         </div>
     </div>
