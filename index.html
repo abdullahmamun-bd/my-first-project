@@ -8,61 +8,51 @@
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
         
-        /* কভার ফটো - ইনোভেটিভ ব্যাকগ্রাউন্ড */
-        .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; background-position: center; height: 300px;
-        }
+        /* কভার ফটো ডিলিট করা হয়েছে - এখন সরাসরি সাদা কন্টেইনার */
+        .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
-        .main-container { max-width: 950px; margin: -150px auto 50px; background: var(--white); border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: hidden; position: relative; }
-        
-        /* প্রোফাইল পিকচার সেকশন */
-        .profile-header { padding: 60px 20px 20px; text-align: center; }
+        /* প্রোফাইল পিকচার সেকশন - স্থায়ীভাবে সমাধান */
+        .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .profile-img-container { 
-            width: 220px; height: 220px; margin: -180px auto 15px; 
-            border-radius: 50%; border: 8px solid var(--white); background: white; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; 
+            width: 220px; height: 220px; margin: 0 auto 20px; 
+            border-radius: 50%; border: 6px solid var(--primary); background: #fff; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); overflow: hidden; 
             display: flex; align-items: center; justify-content: center; 
         }
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         
-        h1 { margin: 10px 0 5px; font-size: 2.6em; font-weight: 800; color: var(--dark); }
-        .tagline { color: var(--primary); font-size: 1.4em; font-weight: bold; margin-bottom: 20px; }
-
-        /* কন্টাক্ট ইনফো এবং সরাসরি মেইল বাটন */
-        .contact-box { margin-bottom: 30px; }
-        .direct-mail-btn {
-            display: inline-block; padding: 12px 30px; background: var(--primary); color: white;
-            text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px;
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(46, 164, 79, 0.3);
-        }
-        .direct-mail-btn:hover { background: #269143; transform: translateY(-2px); }
+        h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
+        
+        .contact-info { color: #555; font-size: 1em; margin-bottom: 5px; }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.7em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
+        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* ক্যারিয়ার জার্নি */
-        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--primary); }
+        /* ক্যারিয়ার সামারি ও এক্সপিরিয়েন্স */
+        .summary-text { text-align: justify; font-size: 1.1em; margin-bottom: 20px; }
+        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #ddd; }
         .job-title { font-weight: bold; font-size: 1.25em; color: var(--dark); }
-        .company-info { color: var(--primary); font-weight: 600; margin-bottom: 5px; display: block; }
+        .company-info { color: var(--primary); font-weight: 600; display: block; margin-bottom: 5px; }
+        ul { padding-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; }
 
-        /* ইনোভেটিভ ড্যাশবোর্ড */
-        .dashboard { background: var(--dark); color: white; border-radius: 15px; padding: 35px; margin: 20px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 10px; }
-        .dash-item h3 { font-size: 2.2em; color: var(--primary); margin: 0; }
+        /* স্কিলস সেকশন */
+        .skill-tag { display: inline-block; background: #e8f5e9; color: var(--primary); padding: 8px 15px; border-radius: 5px; margin: 5px; font-weight: 600; font-size: 0.95em; }
+
+        .dashboard { background: var(--dark); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
+        .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
         
-        /* ক্যারিয়ার অ্যালবাম / গ্যালারি */
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 10px; }
-        .gallery-card { background: white; border: 1px solid #eee; border-radius: 12px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
-        .gallery-card img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+        /* অ্যালবাম সেকশন */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .gallery-card { border: 1px solid #eee; border-radius: 12px; padding: 10px; text-align: center; }
+        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
 
-        .footer { background: var(--dark); padding: 50px; text-align: center; }
-        .footer-btn { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+        .footer { padding: 40px; text-align: center; background: #f9f9f9; }
+        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
     </style>
 </head>
 <body>
-
-    <div class="hero-bg"></div>
 
     <div class="main-container">
         <div class="profile-header">
@@ -71,36 +61,57 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
-            
-            <div class="contact-box">
-                <p style="font-size: 1.1em; color: #555; margin-bottom: 5px;">
-                    📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com
-                </p>
-                <a href="mailto:abdullahmamun3993@gmail.com" class="direct-mail-btn">✉️ Click to Send Email</a>
+            <div class="contact-info">
+                <p>📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
-            <p style="text-align: justify; font-size: 1.1em;">
-                Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring 100% stock accuracy across industrial and food sectors.
+            <p class="summary-text">
+                Dynamic and result-oriented Supply Chain professional with <b>over 10 years of extensive experience</b> in Warehouse Management, Inventory Control, and Logistics. Proven expertise in optimizing supply chain processes using <b>Ibos ERP</b>, ensuring 100% stock accuracy, and managing large-scale distribution networks. Adept at leading teams to achieve operational excellence in fast-paced industrial and food sectors.
             </p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title">Professional Experience</h2>
+            
             <div class="exp-item">
                 <div class="job-title">Senior Executive – Supply Chain</div>
                 <span class="company-info">Herfy Bangladesh (Greenwich Dairy Limited) | 2026 - Present</span>
+                <ul>
+                    <li>Leading end-to-end supply chain, procurement, and logistics management.</li>
+                    <li>Ensuring timely delivery of raw materials and finished goods.</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <div class="job-title">Executive – Warehouse & SCM</div>
                 <span class="company-info">Khaas Food Limited | 2025 - 2026</span>
+                <ul>
+                    <li>Supervised Store operations using Ibos ERP system.</li>
+                    <li>Maintained inventory accuracy through strict cycle counts and regular audits.</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <div class="job-title">Assistant Officer – Store</div>
                 <span class="company-info">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
+                <ul>
+                    <li>Managed warehouse operations and inventory reporting for industrial materials.</li>
+                    <li>Implemented FIFO/FEFO methods to reduce stock wastage.</li>
+                </ul>
             </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skill-tag">Ibos ERP System</div>
+            <div class="skill-tag">Inventory Management</div>
+            <div class="skill-tag">Logistics & Distribution</div>
+            <div class="skill-tag">Strategic Procurement</div>
+            <div class="skill-tag">Team Leadership</div>
+            <div class="skill-tag">Demand Forecasting</div>
         </div>
 
         <div class="dashboard">
@@ -110,7 +121,7 @@
         </div>
 
         <div class="section">
-            <h2 class="section-title">Career Milestones (Album)</h2>
+            <h2 class="section-title">Career Album</h2>
             <div class="gallery-grid">
                 <div class="gallery-card"><img src="pic1.jpeg" alt="Akij"><p><b>Akij Resources</b></p></div>
                 <div class="gallery-card"><img src="pic2.jpeg" alt="Eon"><p><b>Eon Group</b></p></div>
@@ -120,8 +131,8 @@
         </div>
 
         <div class="footer">
-            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="footer-btn" style="background:#0077b5;" target="_blank">LinkedIn</a>
-            <a href="Abdullah CV.pdf.pdf" class="footer-btn" style="background:#ff5722;" download>Download Full CV</a>
+            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="footer-btn" style="background:#0077b5;" target="_blank">LinkedIn Profile</a>
+            <a href="Abdullah CV.pdf.pdf" class="footer-btn" style="background:#ff5722;" download>Download CV</a>
         </div>
     </div>
 
