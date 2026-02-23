@@ -3,56 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN | Professional Portfolio</title>
+    <title>MD. ABDULLAH AL MAMUN | Portfolio</title>
     <style>
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
         [data-theme="dark"] { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #000; }
         
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; transition: 0.4s; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; transition: 0.4s; line-height: 1.6; }
         
-        /* Hero Background */
+        /* ব্যাকগ্রাউন্ড ব্যানার */
         .hero-bg { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; background-position: center; height: 250px;
+            background-size: cover; background-position: center; height: 260px;
         }
 
-        .main-container { max-width: 950px; margin: -80px auto 50px; background: var(--white); border-radius: 15px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: hidden; }
+        .main-container { max-width: 950px; margin: -100px auto 50px; background: var(--white); border-radius: 15px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: hidden; }
         
-        /* Profile Image Fix */
-        .profile-header { padding: 30px; text-align: center; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 6px solid var(--white); margin-top: -120px; object-fit: cover; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        
-        h1 { margin: 15px 0 5px; font-size: 2.2em; color: var(--text); }
-        .tagline { color: var(--primary); font-size: 1.2em; font-weight: bold; margin-bottom: 20px; }
+        /* ছবি এবং হেডার */
+        .profile-header { padding: 40px; text-align: center; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 6px solid var(--white); margin-top: -130px; object-fit: cover; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        h1 { margin: 15px 0 5px; font-size: 2.3em; color: var(--text); }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 20px; }
 
-        /* Sections */
+        /* সেকশন স্টাইল */
         .section { padding: 40px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
+        .section-title { font-size: 1.7em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
 
-        /* Experience Timeline */
-        .experience-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--primary); position: relative; }
-        .experience-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
+        /* ক্যারিয়ার টাইমলাইন */
+        .exp-item { margin-bottom: 35px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
+        .exp-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
+        .company-name { color: var(--primary); font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 5px; }
 
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .skill-card { background: var(--bg); padding: 15px; border-radius: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd; }
+        /* স্কিল গ্রিড */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .skill-box { background: var(--bg); padding: 15px; border-radius: 10px; font-weight: 600; text-align: center; border: 1px solid #ddd; }
 
-        .footer-social { background: var(--dark); padding: 40px; text-align: center; }
-        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .footer { background: var(--dark); padding: 40px; text-align: center; }
+        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; cursor: pointer; border: none; }
         
-        .theme-switch { position: fixed; top: 20px; right: 20px; padding: 10px 15px; border-radius: 20px; cursor: pointer; background: var(--primary); color: white; border: none; font-weight: bold; z-index: 1000; }
+        .theme-switch { position: fixed; top: 20px; right: 20px; padding: 10px 20px; border-radius: 30px; cursor: pointer; background: var(--primary); color: white; border: none; font-weight: bold; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
-    <button class="theme-switch" onclick="toggleTheme()">🌓 Change Mode</button>
+    <button class="theme-switch" id="modeBtn">🌓 Change Mode</button>
 
     <div class="hero-bg"></div>
 
     <div class="main-container">
         <div class="profile-header">
-            <img src="https://github.com/abdullahmamun-bd.png" alt="Abdullah Profile" class="profile-img">
+            <img src="https://github.com/abdullahmamun-bd.png" alt="MD. Abdullah Al Mamun" class="profile-img">
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
             <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
@@ -60,58 +60,51 @@
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
-            <p>
-                Dynamic Supply Chain professional with **over 10 years of intensive experience** in warehouse management, inventory control, and logistics operations. Expert in optimizing supply chain processes, managing large-scale inventory using ERP (Ibos) systems, and ensuring seamless coordination between procurement and production. Proven track record in maintaining 100% brand consistency and high operational efficiency.
+            <p style="text-align: justify;">
+                Dynamic Supply Chain professional with **over 10 years of intensive experience** in warehouse management, inventory control, and logistics operations. 
+                Expert in optimizing supply chain processes, managing large-scale inventory using ERP systems, and ensuring seamless coordination between procurement and production.
             </p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Career Journey</h2>
             
-            <div class="experience-item">
+            <div class="exp-item">
                 <p><strong>03/2026 - Present</strong></p>
-                <p><strong>Senior Executive - Supply Chain</strong> | Herfy Bangladesh</p>
-                <ul>
-                    <li>Overseeing end-to-end supply chain and logistics coordination.</li>
-                </ul>
+                <span class="company-name">Herfy Bangladesh</span>
+                <p>Senior Executive - Supply Chain. Managing end-to-end supply chain and logistics.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="exp-item">
                 <p><strong>06/2025 - 02/2026</strong></p>
-                <p><strong>Executive - Warehouse & SCM</strong> | Khaas Food Limited</p>
-                <ul>
-                    <li>Managed FG Store demand and raw material stock via ERP.</li>
-                </ul>
+                <span class="company-name">Khaas Food Limited</span>
+                <p>Executive - Warehouse & Supply Chain. Managed FG Store and raw material stocks.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="exp-item">
                 <p><strong>05/2017 - 12/2023</strong></p>
-                <p><strong>Assistant Officer - Store</strong> | Akij Resources Limited</p>
-                <ul>
-                    <li>Led inventory reporting, stock maintenance, and local/imported product planning.</li>
-                </ul>
+                <span class="company-name">Akij Resources Limited</span>
+                <p>Assistant Officer - Store. Led inventory reporting, stock maintenance, and local/imported product planning.</p>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">ERP & Ibos System</div>
-                <div class="skill-card">Inventory Control</div>
-                <div class="skill-card">Supply Chain Planning</div>
-                <div class="skill-card">Logistics Operations</div>
-                <div class="skill-card">Warehouse Management</div>
-                <div class="skill-card">Team Leadership</div>
+                <div class="skill-box">ERP & Ibos System</div>
+                <div class="skill-box">Inventory Control & Bin Card</div>
+                <div class="skill-box">Supply Chain Planning</div>
+                <div class="skill-box">Logistics & Warehouse Operations</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Education & Certification</h2>
+            <h2 class="section-title">Certification & Education</h2>
             <p>🎓 <strong>PGD in Logistics & Supply Chain Management</strong> (2023 - 2024)</p>
             <p>🎓 <strong>Bachelor (Honors)</strong> - Govt. Bangla College (2019 - 2023)</p>
         </div>
 
-        <div class="footer-social">
+        <div class="footer">
             <a href="https://facebook.com/abdullahalmamun1626/" class="btn" style="background:#1877f2;" target="_blank">Facebook</a>
             <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;" target="_blank">LinkedIn</a>
             <a href="Abdullah%20CV%2022-02-2026.pdf" class="btn" style="background:#ff5722;" download>Download CV</a>
@@ -119,10 +112,11 @@
     </div>
 
     <script>
-        function toggleTheme() {
+        const btn = document.getElementById('modeBtn');
+        btn.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-theme');
             document.documentElement.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
-        }
+        });
     </script>
 </body>
 </html>
