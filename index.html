@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD. ABDULLAH AL MAMUN | Portfolio</title>
     <style>
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
-        [data-theme="dark"] { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
         
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; transition: 0.4s; line-height: 1.6; }
-        
+        /* Banner & Profile Box */
         .hero-bg { 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover; background-position: center; height: 280px;
         }
-
         .main-container { max-width: 950px; margin: -140px auto 50px; background: var(--white); border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); overflow: visible; position: relative; }
         
+        /* Profile Image Fix */
         .profile-header { padding: 50px 20px 20px; text-align: center; }
-        .profile-img-container {
-            width: 240px; height: 240px; margin: -170px auto 15px;
-            border-radius: 50%; border: 10px solid var(--white);
-            background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden; display: flex; align-items: center; justify-content: center;
-        }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+        .profile-img-container { width: 220px; height: 220px; margin: -160px auto 15px; border-radius: 50%; border: 10px solid var(--white); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
         
-        h1 { margin: 10px 0 5px; font-size: 2.6em; font-weight: 800; }
-        .tagline { color: var(--primary); font-size: 1.4em; font-weight: bold; margin-bottom: 20px; }
+        h1 { margin: 10px 0 5px; font-size: 2.5em; }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 20px; }
 
-        .section { padding: 45px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.8em; color: var(--primary); margin-bottom: 30px; border-left: 8px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
+        /* Sections */
+        .section { padding: 40px; border-bottom: 1px solid #eee; }
+        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 8px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
 
-        .exp-item { margin-bottom: 35px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
+        /* Experience Timeline */
+        .exp-item { margin-bottom: 30px; padding-left: 25px; border-left: 3px solid var(--primary); position: relative; }
         .exp-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        /* Grid Layouts */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .skill-box { background: var(--bg); padding: 15px; border-radius: 10px; font-weight: 600; text-align: center; border: 1px solid #ddd; }
 
-        /* গ্যালারি ইমেজ স্টাইল */
-        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
-        .gallery-card { background: var(--bg); padding: 10px; border-radius: 15px; border: 1px solid #ddd; }
+        /* Gallery Style */
+        .gallery-card { background: #fff; padding: 10px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .gallery-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
 
+        /* Footer */
         .footer { background: var(--dark); padding: 50px; text-align: center; border-radius: 0 0 20px 20px; }
-        .btn { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; }
+        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; background: var(--primary); }
     </style>
 </head>
 <body>
@@ -63,8 +61,8 @@
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
-            <p style="text-align: justify; font-size: 1.1em;">
-                Accomplished Logistics, Warehouse, and Supply Chain professional with **over 10 years of experience**. Expert in ERP systems (Ibos), inventory control, and supply chain planning across food and industrial sectors. Proven ability to optimize processes and maintain 100% brand consistency.
+            <p style="text-align: justify;">
+                Dynamic Supply Chain professional with **over 10 years of intensive experience** in warehouse management, inventory control, and logistics operations. Expert in optimizing supply chain processes using ERP (Ibos) systems and ensuring seamless coordination between procurement and production.
             </p>
         </div>
 
@@ -73,16 +71,87 @@
             
             <div class="exp-item">
                 <p><strong>03/2026 - Present</strong></p>
-                <p style="color: var(--primary); font-weight: bold; font-size: 1.2em;">Senior Executive - Supply Chain | Herfy Bangladesh</p>
-                <p>Leading end-to-end supply chain operations, procurement, and logistics management.</p>
+                <p><strong>Senior Executive - Supply Chain</strong> | Herfy Bangladesh</p>
+                <p>Managing end-to-end supply chain and logistics.</p>
             </div>
 
             <div class="exp-item">
                 <p><strong>06/2025 - 02/2026</strong></p>
-                <p style="color: var(--primary); font-weight: bold; font-size: 1.2em;">Executive - Warehouse & SCM | Khaas Food Limited</p>
-                <p>Managed FG Store demand, raw material stock maintenance via ERP, and led warehouse teams.</p>
+                <p><strong>Executive - Warehouse & SCM</strong> | Khaas Food Limited</p>
+                <p>Managed FG Store demand and raw material stock via ERP.</p>
             </div>
 
             <div class="exp-item">
                 <p><strong>05/2017 - 12/2023</strong></p>
-                <p style="color: var(--primary); font-weight: bold; font-size: 1.2em;">Assistant Officer - Store | Akij Resources Limited [cite: 8176c606-d931-426d-86b8
+                <p><strong>Assistant Officer - Store</strong> | Akij Resources Limited</p>
+                <p>Led inventory reporting, stock maintenance, and planning.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-box">ERP & Ibos System</div>
+                <div class="skill-box">Inventory Control</div>
+                <div class="skill-box">Supply Chain Planning</div>
+                <div class="skill-box">Logistics Operations</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education & Certification</h2>
+            <p>🎓 <strong>PGD in Logistics & Supply Chain Management</strong> (2023 - 2024)</p>
+            <p>🎓 <strong>Bachelor (Honors)</strong> - Govt. Bangla College (2019 - 2023)</p>
+        </div>
+
+        <div class="section" style="background: var(--dark); color: white; border-radius: 15px;">
+            <h2 class="section-title" style="color: var(--primary); border-color: var(--primary);">SCM Performance</h2>
+            <div class="skills-grid">
+                <div style="text-align:center;">
+                    <div style="font-size: 2.2em; color: var(--primary); font-weight: bold;">99%</div>
+                    <p>Inventory Accuracy</p>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size: 2.2em; color: var(--primary); font-weight: bold;">10+ Yrs</div>
+                    <p>Industry Experience</p>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size: 2.2em; color: var(--primary); font-weight: bold;">ERP</div>
+                    <p>Ibos System Expert</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Career Milestones</h2>
+            <div class="skills-grid">
+                <div class="gallery-card">
+                    <img src="24078.jpg" class="gallery-img">
+                    <p><strong>Akij Resources Limited</strong></p>
+                    <small>Last Working Day Memories</small>
+                </div>
+                <div class="gallery-card">
+                    <img src="24079.jpg" class="gallery-img">
+                    <p><strong>Eon Group</strong></p>
+                    <small>Joining Day - New Journey</small>
+                </div>
+                <div class="gallery-card">
+                    <img src="24081.jpg" class="gallery-img">
+                    <p><strong>Khaas Food Limited</strong></p>
+                    <small>Joining Day - Team Welcome</small>
+                </div>
+                <div class="gallery-card">
+                    <img src="24080.jpg" class="gallery-img">
+                    <p><strong>Khaas Food Limited</strong></p>
+                    <small>Last Working Day - Farewell</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn">LinkedIn</a>
+            <a href="https://facebook.com/abdullahalmamun1626/" class="btn" style="background:#1877f2;">Facebook</a>
+        </div>
+    </div>
+</body>
+</html>
