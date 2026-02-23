@@ -8,7 +8,7 @@
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
         
-        /* কভার ফটো - প্রফেশনাল ওয়্যারহাউস ইমেজ */
+        /* কভার ফটো */
         .hero-bg { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); 
@@ -19,10 +19,16 @@
         
         .profile-header { padding: 60px 20px 20px; text-align: center; }
         .profile-img-container { width: 230px; height: 230px; margin: -180px auto 15px; border-radius: 50%; border: 8px solid var(--white); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* প্রোফাইল পিকচার ফিক্স: ছবির উপরের অংশ যেন না কাটে */
+        .profile-img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
         
         h1 { margin: 10px 0 5px; font-size: 2.6em; font-weight: 800; color: var(--dark); }
         .tagline { color: var(--primary); font-size: 1.4em; font-weight: bold; margin-bottom: 20px; }
+
+        /* ডিরেক্ট কানেক্ট বাটন */
+        .connect-btn { display: inline-block; padding: 10px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 20px; transition: 0.3s; box-shadow: 0 4px 15px rgba(46, 164, 79, 0.3); }
+        .connect-btn:hover { background: #269143; transform: scale(1.05); }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.7em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
@@ -60,71 +66,65 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
+            
+            <a href="mailto:abdullahmamun3993@gmail.com" class="connect-btn">Let's Connect & Chat</a>
+            
             <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
         </div>
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
             <p style="text-align: justify; font-size: 1.1em;">
-                Dynamic and result-oriented Supply Chain professional with <b>over 10 years of extensive experience</b> in Warehouse Management, Inventory Control, and Logistics. Proven expertise in optimizing supply chain processes using <b>Ibos ERP</b>, ensuring 100% stock accuracy, and managing large-scale distribution networks. Adept at leading teams to achieve operational excellence in fast-paced industrial and food sectors.
+                Dynamic and result-oriented Supply Chain professional with <b>over 10 years of extensive experience</b> in Warehouse Management, Inventory Control, and Logistics. Proven expertise in optimizing supply chain processes using <b>Ibos ERP</b>, ensuring 100% stock accuracy, and managing large-scale distribution networks.
             </p>
         </div>
 
         <div class="section">
             <h2 class="section-title">Professional Experience</h2>
-            
             <div class="exp-item">
                 <span class="date">March 2026 – Present</span>
                 <div class="job-title">Senior Executive – Supply Chain</div>
                 <span class="company">Herfy Bangladesh (Greenwich Dairy Limited)</span>
                 <ul>
                     <li>Leading end-to-end supply chain operations, procurement, and logistics management.</li>
-                    <li>Managing vendor relationships and contract negotiations to ensure cost-efficiency.</li>
-                    <li>Ensuring timely delivery of raw materials and finished goods across distribution channels.</li>
+                    <li>Managing vendor relationships to ensure cost-efficiency and timely delivery.</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <span class="date">June 2025 – February 2026</span>
                 <div class="job-title">Executive – Warehouse & SCM</div>
                 <span class="company">Khaas Food Limited</span>
                 <ul>
                     <li>Supervised Raw Materials and FG Store operations using Ibos ERP system.</li>
-                    <li>Maintained 99.9% inventory accuracy through strict cycle counts and regular audits.</li>
-                    <li>Coordinated with production and procurement departments for demand forecasting.</li>
+                    <li>Maintained 99.9% inventory accuracy through regular cycle counts and audits.</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <span class="date">May 2017 – December 2023</span>
                 <div class="job-title">Assistant Officer – Store</div>
                 <span class="company">Akij Resources Limited (Akij Group)</span>
                 <ul>
                     <li>Led warehouse operations and inventory reporting for industrial raw materials.</li>
-                    <li>Implemented FIFO/FEFO methods to reduce stock wastage and optimize storage space.</li>
-                    <li>Prepared weekly and monthly inventory reports for top-level management.</li>
+                    <li>Implemented FIFO/FEFO methods to reduce stock wastage.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Education & Core Skills</h2>
-            <p style="font-size: 1.1em;">🎓 <b>PGD in Logistics & Supply Chain Management</b> | ISCEA (2023 - 2024)</p>
+            <p style="font-size: 1.1em;">🎓 <b>PGD in Logistics & SCM</b> | ISCEA (2023 - 2024)</p>
             <p style="font-size: 1.1em;">🎓 <b>Bachelor of Arts (Honors)</b> | Govt. Bangla College (2019 - 2023)</p>
-            
             <div class="skills-grid">
                 <div class="skill-box">Ibos ERP System</div>
                 <div class="skill-box">Inventory Management</div>
                 <div class="skill-box">Logistics & Distribution</div>
-                <div class="skill-box">Strategic Procurement</div>
-                <div class="skill-box">Demand Forecasting</div>
                 <div class="skill-box">Team Leadership</div>
             </div>
         </div>
 
         <div class="dashboard">
-            <div class="dash-item"><h3>99%</h3><p>Inventory Accuracy</p></div>
-            <div class="dash-item"><h3>10+ Yrs</h3><p>Industry Experience</p></div>
+            <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
+            <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
             <div class="dash-item"><h3>ERP</h3><p>Ibos Expert</p></div>
         </div>
 
@@ -140,7 +140,7 @@
 
         <div class="footer">
             <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;" target="_blank">LinkedIn Profile</a>
-            <a href="Abdullah CV.pdf.pdf" class="btn" style="background:#ff5722;" download>Download Full CV</a>
+            <a href="Abdullah CV.pdf.pdf" class="btn" style="background:#ff5722;" download>Download CV</a>
         </div>
     </div>
 </body>
