@@ -8,10 +8,8 @@
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
         
-        /* কভার ফটো ডিলিট করা হয়েছে - এখন সরাসরি সাদা কন্টেইনার */
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
-        /* প্রোফাইল পিকচার সেকশন - স্থায়ীভাবে সমাধান */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .profile-img-container { 
             width: 220px; height: 220px; margin: 0 auto 20px; 
@@ -23,33 +21,30 @@
         
         h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
         .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
-        
-        .contact-info { color: #555; font-size: 1em; margin-bottom: 5px; }
+        .contact-info { color: #555; font-size: 1em; }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* ক্যারিয়ার সামারি ও এক্সপিরিয়েন্স */
-        .summary-text { text-align: justify; font-size: 1.1em; margin-bottom: 20px; }
+        .summary-text { text-align: justify; font-size: 1.1em; }
         .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #ddd; }
         .job-title { font-weight: bold; font-size: 1.25em; color: var(--dark); }
         .company-info { color: var(--primary); font-weight: 600; display: block; margin-bottom: 5px; }
         ul { padding-left: 20px; margin-top: 10px; }
         li { margin-bottom: 8px; }
 
-        /* স্কিলস সেকশন */
-        .skill-tag { display: inline-block; background: #e8f5e9; color: var(--primary); padding: 8px 15px; border-radius: 5px; margin: 5px; font-weight: 600; font-size: 0.95em; }
+        .skill-tag { display: inline-block; background: #e8f5e9; color: var(--primary); padding: 8px 15px; border-radius: 5px; margin: 5px; font-weight: 600; }
 
         .dashboard { background: var(--dark); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
         .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
         
-        /* অ্যালবাম সেকশন */
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .gallery-card { border: 1px solid #eee; border-radius: 12px; padding: 10px; text-align: center; }
-        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
+        .gallery-card { border: 1px solid #eee; border-radius: 12px; padding: 15px; text-align: center; background: #fff; }
+        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        .gallery-card p { font-size: 0.95em; color: #666; margin: 0; }
 
         .footer { padding: 40px; text-align: center; background: #f9f9f9; }
-        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -69,7 +64,7 @@
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
             <p class="summary-text">
-                Dynamic and result-oriented Supply Chain professional with <b>over 10 years of extensive experience</b> in Warehouse Management, Inventory Control, and Logistics. Proven expertise in optimizing supply chain processes using <b>Ibos ERP</b>, ensuring 100% stock accuracy, and managing large-scale distribution networks. Adept at leading teams to achieve operational excellence in fast-paced industrial and food sectors.
+                Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring stock accuracy and operational excellence.
             </p>
         </div>
 
@@ -80,8 +75,7 @@
                 <div class="job-title">Senior Executive – Supply Chain</div>
                 <span class="company-info">Herfy Bangladesh (Greenwich Dairy Limited) | 2026 - Present</span>
                 <ul>
-                    <li>Leading end-to-end supply chain, procurement, and logistics management.</li>
-                    <li>Ensuring timely delivery of raw materials and finished goods.</li>
+                    <li>Leading procurement and logistics for food supply chain.</li>
                 </ul>
             </div>
 
@@ -89,8 +83,16 @@
                 <div class="job-title">Executive – Warehouse & SCM</div>
                 <span class="company-info">Khaas Food Limited | 2025 - 2026</span>
                 <ul>
-                    <li>Supervised Store operations using Ibos ERP system.</li>
-                    <li>Maintained inventory accuracy through strict cycle counts and regular audits.</li>
+                    <li>Managed Raw Material and FG Store using Ibos ERP.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="job-title">Senior Store Officer</div>
+                <span class="company-info">Eon Group of Industries | Dec 2023 - May 2025</span>
+                <ul>
+                    <li>Supervised warehouse operations and distribution logistics.</li>
+                    <li>Maintained stock accuracy and reporting through ERP.</li>
                 </ul>
             </div>
 
@@ -98,35 +100,45 @@
                 <div class="job-title">Assistant Officer – Store</div>
                 <span class="company-info">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
                 <ul>
-                    <li>Managed warehouse operations and inventory reporting for industrial materials.</li>
-                    <li>Implemented FIFO/FEFO methods to reduce stock wastage.</li>
+                    <li>Optimized industrial store management and FIFO implementation.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Core Skills</h2>
-            <div class="skill-tag">Ibos ERP System</div>
+            <div class="skill-tag">Ibos ERP</div>
             <div class="skill-tag">Inventory Management</div>
-            <div class="skill-tag">Logistics & Distribution</div>
-            <div class="skill-tag">Strategic Procurement</div>
-            <div class="skill-tag">Team Leadership</div>
-            <div class="skill-tag">Demand Forecasting</div>
+            <div class="skill-tag">Logistics</div>
+            <div class="skill-tag">Procurement</div>
+            <div class="skill-tag">Warehouse Operations</div>
         </div>
 
         <div class="dashboard">
             <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
             <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
-            <div class="dash-item"><h3>ERP</h3><p>Ibos Expert</p></div>
+            <div class="dash-item"><h3>ERP</h3><p>Expert</p></div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Career Album</h2>
+            <h2 class="section-title">Career Milestones & Album</h2>
             <div class="gallery-grid">
-                <div class="gallery-card"><img src="pic1.jpeg" alt="Akij"><p><b>Akij Resources</b></p></div>
-                <div class="gallery-card"><img src="pic2.jpeg" alt="Eon"><p><b>Eon Group</b></p></div>
-                <div class="gallery-card"><img src="pic3.jpeg" alt="Khaas"><p><b>Khaas Food</b></p></div>
-                <div class="gallery-card"><img src="pic4.jpeg" alt="Farewell"><p><b>Farewell Team</b></p></div>
+                <div class="gallery-card">
+                    <img src="pic1.jpeg" alt="Akij Resources">
+                    <p><b>Akij Resources</b><br>Long-term journey managing industrial raw materials.</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="pic2.jpeg" alt="Eon Group">
+                    <p><b>Eon Group</b><br>Expertise in warehouse and logistics operations.</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="pic3.jpeg" alt="Khaas Food">
+                    <p><b>Khaas Food</b><br>Driving efficiency in food supply chain and Ibos ERP.</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="pic4.jpeg" alt="Farewell">
+                    <p><b>Professional Farewell</b><br>Successful transition with a legacy of performance.</p>
+                </div>
             </div>
         </div>
 
@@ -135,6 +147,5 @@
             <a href="Abdullah CV.pdf.pdf" class="footer-btn" style="background:#ff5722;" download>Download CV</a>
         </div>
     </div>
-
 </body>
 </html>
