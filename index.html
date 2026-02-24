@@ -10,6 +10,7 @@
         
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
+        /* প্রোফাইল হেডার (স্থায়ী ফিক্স) */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .profile-img-container { 
             width: 220px; height: 220px; margin: 0 auto 20px; 
@@ -26,14 +27,15 @@
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        .summary-text { text-align: justify; font-size: 1.1em; }
+        /* নিউ ডেভেলপমেন্ট: ইন্টারেক্টিভ স্কিল বার */
+        .skill-container { margin-bottom: 20px; }
+        .skill-name { font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .skill-bar { height: 10px; background: #e0e0e0; border-radius: 5px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--primary); border-radius: 5px; transition: width 1s ease-in-out; }
+
         .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #ddd; }
         .job-title { font-weight: bold; font-size: 1.25em; color: var(--dark); }
         .company-info { color: var(--primary); font-weight: 600; display: block; margin-bottom: 5px; }
-        ul { padding-left: 20px; margin-top: 10px; }
-        li { margin-bottom: 8px; }
-
-        .skill-tag { display: inline-block; background: #e8f5e9; color: var(--primary); padding: 8px 15px; border-radius: 5px; margin: 5px; font-weight: 600; }
 
         .dashboard { background: var(--dark); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
         .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
@@ -41,7 +43,6 @@
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .gallery-card { border: 1px solid #eee; border-radius: 12px; padding: 15px; text-align: center; background: #fff; }
         .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
-        .gallery-card p { font-size: 0.95em; color: #666; margin: 0; }
 
         .footer { padding: 40px; text-align: center; background: #f9f9f9; }
         .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
@@ -63,55 +64,53 @@
 
         <div class="section">
             <h2 class="section-title">Career Summary</h2>
-            <p class="summary-text">
+            <p style="text-align: justify; font-size: 1.1em;">
                 Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring stock accuracy and operational excellence.
             </p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Core Competencies</h2>
             
-            <div class="exp-item">
-                <div class="job-title">Senior Executive – Supply Chain</div>
-                <span class="company-info">Herfy Bangladesh (Greenwich Dairy Limited) | 2026 - Present</span>
-                <ul>
-                    <li>Leading procurement and logistics for food supply chain.</li>
-                </ul>
+            <div class="skill-container">
+                <div class="skill-name"><span>Ibos ERP System</span><span>95%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            </div>
+            
+            <div class="skill-container">
+                <div class="skill-name"><span>Inventory Management</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
             </div>
 
-            <div class="exp-item">
-                <div class="job-title">Executive – Warehouse & SCM</div>
-                <span class="company-info">Khaas Food Limited | 2025 - 2026</span>
-                <ul>
-                    <li>Managed Raw Material and FG Store using Ibos ERP.</li>
-                </ul>
+            <div class="skill-container">
+                <div class="skill-name"><span>Logistics & Distribution</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
             </div>
 
-            <div class="exp-item">
-                <div class="job-title">Senior Store Officer</div>
-                <span class="company-info">Eon Group of Industries | Dec 2023 - May 2025</span>
-                <ul>
-                    <li>Supervised warehouse operations and distribution logistics.</li>
-                    <li>Maintained stock accuracy and reporting through ERP.</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <div class="job-title">Assistant Officer – Store</div>
-                <span class="company-info">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
-                <ul>
-                    <li>Optimized industrial store management and FIFO implementation.</li>
-                </ul>
+            <div class="skill-container">
+                <div class="skill-name"><span>Warehouse Operations</span><span>92%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Core Skills</h2>
-            <div class="skill-tag">Ibos ERP</div>
-            <div class="skill-tag">Inventory Management</div>
-            <div class="skill-tag">Logistics</div>
-            <div class="skill-tag">Procurement</div>
-            <div class="skill-tag">Warehouse Operations</div>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="exp-item">
+                <div class="job-title">Senior Executive – Supply Chain</div>
+                <span class="company-info">Herfy Bangladesh (Greenwich Dairy Limited) | 2026 - Present</span>
+            </div>
+            <div class="exp-item">
+                <div class="job-title">Executive – Warehouse & SCM</div>
+                <span class="company-info">Khaas Food Limited | 2025 - 2026</span>
+            </div>
+            <div class="exp-item">
+                <div class="job-title">Senior Store Officer</div>
+                <span class="company-info">Eon Group of Industries | Dec 2023 - May 2025</span>
+            </div>
+            <div class="exp-item">
+                <div class="job-title">Assistant Officer – Store</div>
+                <span class="company-info">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
+            </div>
         </div>
 
         <div class="dashboard">
@@ -121,24 +120,12 @@
         </div>
 
         <div class="section">
-            <h2 class="section-title">Career Milestones & Album</h2>
+            <h2 class="section-title">Career Milestones</h2>
             <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="pic1.jpeg" alt="Akij Resources">
-                    <p><b>Akij Resources</b><br>Long-term journey managing industrial raw materials.</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="pic2.jpeg" alt="Eon Group">
-                    <p><b>Eon Group</b><br>Expertise in warehouse and logistics operations.</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="pic3.jpeg" alt="Khaas Food">
-                    <p><b>Khaas Food</b><br>Driving efficiency in food supply chain and Ibos ERP.</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="pic4.jpeg" alt="Farewell">
-                    <p><b>Professional Farewell</b><br>Successful transition with a legacy of performance.</p>
-                </div>
+                <div class="gallery-card"><img src="pic1.jpeg" alt="Akij"><p><b>Akij Resources</b></p></div>
+                <div class="gallery-card"><img src="pic2.jpeg" alt="Eon"><p><b>Eon Group</b></p></div>
+                <div class="gallery-card"><img src="pic3.jpeg" alt="Khaas"><p><b>Khaas Food</b></p></div>
+                <div class="gallery-card"><img src="pic4.jpeg" alt="Farewell"><p><b>Farewell Team</b></p></div>
             </div>
         </div>
 
