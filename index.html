@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD. ABDULLAH AL MAMUN | SCM Expert</title>
     <style>
-        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --input-bg: #fff; }
-        .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; --input-bg: #2d2d2d; }
+        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --card-bg: #ffffff; }
+        .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; --card-bg: #2d2d2d; }
         
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; padding-bottom: 80px; }
         
@@ -21,25 +21,21 @@
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* প্রজেক্ট কার্ড স্টাইল (New Development) */
+        /* আকিজ রেডিমিক্স প্রজেক্ট স্টাইল */
+        .special-project { background: linear-gradient(135deg, #e8f5e9, #ffffff); border: 2px solid var(--primary); padding: 25px; border-radius: 15px; margin-bottom: 30px; }
+        .special-project h4 { margin-top: 0; color: #1b5e20; font-size: 1.4em; }
+
+        .edu-item { margin-bottom: 20px; }
+        .edu-title { font-weight: bold; font-size: 1.2em; color: var(--dark); }
+        .edu-inst { color: var(--primary); font-weight: 600; }
+
         .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .project-card { background: var(--bg); border: 1px solid #ddd; padding: 20px; border-radius: 12px; transition: 0.3s; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
-        .project-card h4 { margin-top: 0; color: var(--primary); }
-        .project-card p { font-size: 0.9em; margin-bottom: 0; }
+        .project-card { background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid #ddd; }
 
-        /* স্টিকি ফুটার বাটন */
         .sticky-footer { position: fixed; bottom: 0; width: 100%; background: var(--dark); padding: 15px 0; display: flex; justify-content: center; gap: 20px; z-index: 1000; }
-        .action-btn { padding: 10px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; display: flex; align-items: center; gap: 8px; }
+        .action-btn { padding: 10px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; }
 
-        /* স্লাইডার */
-        .slider-container { position: relative; width: 100%; height: 350px; overflow: hidden; border-radius: 15px; }
-        .slides { display: flex; width: 400%; height: 100%; transition: transform 0.6s ease-in-out; }
-        .slide { width: 25%; height: 100%; position: relative; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
-        .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center; }
-
-        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } .dashboard { grid-template-columns: 1fr; gap: 20px; } }
+        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -56,58 +52,52 @@
         </div>
 
         <div class="section">
-            <h2 class="section-title">Key Projects & Achievements</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>ERP Implementation</h4>
-                    <p>Successfully led the transition to Ibos ERP across multiple warehouse locations, improving reporting speed by 40%.</p>
-                </div>
-                <div class="project-card">
-                    <h4>Inventory Optimization</h4>
-                    <p>Reduced dead stock by 15% through the implementation of advanced FIFO and cycle counting techniques.</p>
-                </div>
-                <div class="project-card">
-                    <h4>Logistics Efficiency</h4>
-                    <p>Streamlined distribution routes for Khaas Food, resulting in a 10% reduction in delivery lead time.</p>
-                </div>
-                <div class="project-card">
-                    <h4>Audit Success</h4>
-                    <p>Maintained 99.5% stock accuracy in annual third-party audits for Akij Resources Limited.</p>
-                </div>
+            <h2 class="section-title">Major Project Highlight</h2>
+            <div class="special-project">
+                <h4>Akij Ready Mix Plant-3</h4>
+                <p>আমি সরাসরি এই প্রজেক্টের <b>Project Management, Project Development, এবং Inventory Management</b> এর দায়িত্ব পালন করেছি। প্ল্যান্টের শুরু থেকে অপারেশনাল পর্যায় পর্যন্ত ইনভেন্টরি কন্ট্রোল এবং রিসোর্স অপ্টিমাইজেশনে গুরুত্বপূর্ণ ভূমিকা রেখেছি।</p>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Career Milestones</h2>
-            <div class="slider-container">
-                <div class="slides" id="slider">
-                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources</div></div>
-                    <div class="slide"><img src="pic2.jpeg" alt="Eon"><div class="slide-caption">Eon Group</div></div>
-                    <div class="slide"><img src="pic3.jpeg" alt="Khaas"><div class="slide-caption">Khaas Food</div></div>
-                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class="slide-caption">Professional Journey</div></div>
+            <h2 class="section-title">Education</h2>
+            <div class="edu-item">
+                <div class="edu-title">Masters of Business Administration (MBA)</div>
+                <div class="edu-inst">Major in Supply Chain Management</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-title">Post Graduate Diploma (PGD)</div>
+                <div class="edu-inst">Academy of Business Professionals (ABP)</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-title">Bachelor of Science / Business Studies</div>
+                <div class="edu-inst">National University of Bangladesh</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Other Achievements</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>ERP Optimization</h4>
+                    <p>সফলভাবে Ibos ERP সিস্টেম পরিচালনা ও স্টকের স্বচ্ছতা নিশ্চিতকরণ।</p>
+                </div>
+                <div class="project-card">
+                    <h4>Warehouse Efficiency</h4>
+                    <p>আকিজ গ্রুপে থাকাকালীন স্টোর অপারেশন অপ্টিমাইজেশন।</p>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div class="sticky-footer">
-        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="action-btn" style="background: #0077b5;">
-            LinkedIn
-        </a>
-        <a href="Abdullah CV.pdf.pdf" download class="action-btn" style="background: #ff5722;">
-            Download CV
-        </a>
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="action-btn" style="background: #0077b5;">LinkedIn</a>
+        <a href="Abdullah CV.pdf.pdf" download class="action-btn" style="background: #ff5722;">Download CV</a>
     </div>
 
     <script>
         function toggleTheme() { document.body.classList.toggle('dark-theme'); }
-        
-        let currentIndex = 0;
-        setInterval(() => {
-            const slider = document.getElementById('slider');
-            currentIndex = (currentIndex + 1) % 4;
-            slider.style.transform = `translateX(-${currentIndex * 25}%)`;
-        }, 5000);
     </script>
 </body>
 </html>
