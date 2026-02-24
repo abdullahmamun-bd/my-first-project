@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD. ABDULLAH AL MAMUN | SCM Professional</title>
     <style>
-        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --card-bg: #ffffff; }
         
+        /* ডার্ক মোড ভেরিয়েবল */
+        .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --card-bg: #2d2d2d; --dark: #ffffff; }
+
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; }
+        
+        /* ডার্ক মোড সুইচ */
+        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
-        /* প্রোফাইল হেডার (স্থায়ী ফিক্স) */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .profile-img-container { 
-            width: 220px; height: 220px; margin: 0 auto 20px; 
+            width: 200px; height: 200px; margin: 0 auto 20px; 
             border-radius: 50%; border: 6px solid var(--primary); background: #fff; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.1); overflow: hidden; 
             display: flex; align-items: center; justify-content: center; 
@@ -21,34 +27,36 @@
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         
         h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
-        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
-        .contact-info { color: #555; font-size: 1em; }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* নিউ ডেভেলপমেন্ট: ইন্টারেক্টিভ স্কিল বার */
-        .skill-container { margin-bottom: 20px; }
+        /* সার্টিফিকেশন বক্স (New Development) */
+        .cert-card { background: var(--bg); border: 2px dashed var(--primary); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 20px; }
+        .cert-icon { font-size: 40px; color: var(--primary); }
+        .cert-info h4 { margin: 0; font-size: 1.2em; color: var(--dark); }
+        .cert-info p { margin: 5px 0 0; color: #777; }
+
+        /* স্কিল বার */
+        .skill-container { margin-bottom: 15px; }
         .skill-name { font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 5px; }
-        .skill-bar { height: 10px; background: #e0e0e0; border-radius: 5px; overflow: hidden; }
-        .skill-progress { height: 100%; background: var(--primary); border-radius: 5px; transition: width 1s ease-in-out; }
+        .skill-bar { height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--primary); width: 0; transition: 1.5s ease-in-out; }
 
-        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #ddd; }
-        .job-title { font-weight: bold; font-size: 1.25em; color: var(--dark); }
-        .company-info { color: var(--primary); font-weight: 600; display: block; margin-bottom: 5px; }
+        .exp-item { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid #ddd; }
+        .job-title { font-weight: bold; font-size: 1.2em; color: var(--dark); }
 
-        .dashboard { background: var(--dark); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
+        .dashboard { background: #1a1a1a; color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
         .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
-        
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .gallery-card { border: 1px solid #eee; border-radius: 12px; padding: 15px; text-align: center; background: #fff; }
-        .gallery-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
 
-        .footer { padding: 40px; text-align: center; background: #f9f9f9; }
-        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
+        .footer { padding: 40px; text-align: center; background: var(--white); }
+        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; background: var(--primary); }
     </style>
 </head>
 <body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
 
     <div class="main-container">
         <div class="profile-header">
@@ -57,82 +65,60 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
-            <div class="contact-info">
-                <p>📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
+            <p>📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certification</h2>
+            <div class="cert-card">
+                <div class="cert-icon">🎓</div>
+                <div class="cert-info">
+                    <h4>PGD in Supply Chain Management</h4>
+                    <p><b>ABP - Academy of Business Professionals</b></p>
+                    <p>Focus: Strategic Sourcing, Logistics, and Inventory Optimization</p>
+                </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Career Summary</h2>
-            <p style="text-align: justify; font-size: 1.1em;">
-                Dynamic Supply Chain professional with <b>over 10 years of experience</b> in Warehouse Management, Inventory Control, and Logistics. Expert in <b>Ibos ERP</b>, ensuring stock accuracy and operational excellence.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Core Competencies</h2>
-            
+            <h2 class="section-title">Professional Skills</h2>
             <div class="skill-container">
-                <div class="skill-name"><span>Ibos ERP System</span><span>95%</span></div>
+                <div class="skill-name"><span>Ibos ERP</span><span>95%</span></div>
                 <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
             </div>
-            
             <div class="skill-container">
-                <div class="skill-name"><span>Inventory Management</span><span>90%</span></div>
+                <div class="skill-name"><span>Warehouse & Logistics</span><span>90%</span></div>
                 <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-            </div>
-
-            <div class="skill-container">
-                <div class="skill-name"><span>Logistics & Distribution</span><span>85%</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
-            </div>
-
-            <div class="skill-container">
-                <div class="skill-name"><span>Warehouse Operations</span><span>92%</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Work Experience</h2>
             <div class="exp-item">
                 <div class="job-title">Senior Executive – Supply Chain</div>
-                <span class="company-info">Herfy Bangladesh (Greenwich Dairy Limited) | 2026 - Present</span>
-            </div>
-            <div class="exp-item">
-                <div class="job-title">Executive – Warehouse & SCM</div>
-                <span class="company-info">Khaas Food Limited | 2025 - 2026</span>
+                <p style="color: var(--primary);">Herfy Bangladesh | 2026 - Present</p>
             </div>
             <div class="exp-item">
                 <div class="job-title">Senior Store Officer</div>
-                <span class="company-info">Eon Group of Industries | Dec 2023 - May 2025</span>
-            </div>
-            <div class="exp-item">
-                <div class="job-title">Assistant Officer – Store</div>
-                <span class="company-info">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
+                <p style="color: var(--primary);">Eon Group of Industries | 2023 - 2025</p>
             </div>
         </div>
 
         <div class="dashboard">
             <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
             <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
-            <div class="dash-item"><h3>ERP</h3><p>Expert</p></div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Career Milestones</h2>
-            <div class="gallery-grid">
-                <div class="gallery-card"><img src="pic1.jpeg" alt="Akij"><p><b>Akij Resources</b></p></div>
-                <div class="gallery-card"><img src="pic2.jpeg" alt="Eon"><p><b>Eon Group</b></p></div>
-                <div class="gallery-card"><img src="pic3.jpeg" alt="Khaas"><p><b>Khaas Food</b></p></div>
-                <div class="gallery-card"><img src="pic4.jpeg" alt="Farewell"><p><b>Farewell Team</b></p></div>
-            </div>
+            <div class="dash-item"><h3>ERP</h3><p>Ibos Expert</p></div>
         </div>
 
         <div class="footer">
-            <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="footer-btn" style="background:#0077b5;" target="_blank">LinkedIn Profile</a>
-            <a href="Abdullah CV.pdf.pdf" class="footer-btn" style="background:#ff5722;" download>Download CV</a>
+            <a href="#" class="footer-btn">Download Full Resume</a>
         </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
 </body>
 </html>
