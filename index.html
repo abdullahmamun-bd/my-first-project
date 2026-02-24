@@ -10,10 +10,12 @@
         
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; }
         
-        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        /* ডার্ক মোড বাটন */
+        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
+        /* প্রোফাইল পিকচার ফিক্স */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .profile-img-container { 
             width: 200px; height: 200px; margin: 0 auto 20px; 
@@ -21,42 +23,39 @@
             overflow: hidden; display: flex; align-items: center; justify-content: center; 
         }
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+        
+        h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
+        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; }
 
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* স্লাইডার স্টাইল */
-        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; }
+        /* স্কিল বার */
+        .skill-container { margin-bottom: 15px; }
+        .skill-name { font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .skill-bar { height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--primary); border-radius: 5px; }
+
+        /* স্লাইডার */
+        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; margin-top: 10px; }
         .slides { display: flex; width: 400%; height: 100%; transition: transform 0.6s ease-in-out; }
         .slide { width: 25%; height: 100%; position: relative; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
         .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center; }
 
-        /* --- কন্টাক্ট ফর্ম স্টাইল (New Development) --- */
+        /* কন্টাক্ট ফর্ম */
         .contact-form { display: grid; gap: 15px; }
         .form-group { display: flex; flex-direction: column; }
-        .form-group label { font-weight: bold; margin-bottom: 5px; color: var(--primary); }
-        .form-group input, .form-group textarea { 
-            padding: 12px; border: 1px solid #ccc; border-radius: 8px; 
-            background: var(--input-bg); color: var(--text); font-family: inherit;
-        }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 5px rgba(46, 164, 79, 0.3); }
-        .submit-btn { 
-            background: var(--primary); color: white; border: none; padding: 15px; 
-            border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1em; transition: 0.3s;
-        }
-        .submit-btn:hover { background: #269143; transform: scale(1.02); }
+        .form-group input, .form-group textarea { padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: var(--input-bg); color: var(--text); }
+        .submit-btn { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
 
         .dashboard { background: #1a1a1a; color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
         .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
-
-        .footer { padding: 40px; text-align: center; }
-        .footer-btn { display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; background: var(--primary); }
     </style>
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Mode</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
 
     <div class="main-container">
         <div class="profile-header">
@@ -65,13 +64,66 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
+            <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skill-container">
+                <div class="skill-name"><span>Ibos ERP</span><span>95%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-container">
+                <div class="skill-name"><span>Inventory Management</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certification</h2>
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--primary);">
+                <h4>PGD in Supply Chain Management</h4>
+                <p><b>ABP - Academy of Business Professionals</b></p>
+            </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Career Milestones</h2>
             <div class="slider-container">
                 <div class="slides" id="slider">
-                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources Limited</div></div>
-                    <div class="slide"><img src="pic2.jpeg" alt="Eon"><div class="slide-caption">Eon Group of Industries</div></div>
-                    <div class="slide"><img src="pic3.jpeg" alt="Khaas"><div class="slide-caption">Khaas Food Limited</div></div>
-                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class
+                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources</div></div>
+                    <div class="slide"><img src="pic2.jpeg" alt="Eon"><div class="slide-caption">Eon Group</div></div>
+                    <div class="slide"><img src="pic3.jpeg" alt="Khaas"><div class="slide-caption">Khaas Food</div></div>
+                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class="slide-caption">Professional Journey</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form" action="mailto:abdullahmamun3993@gmail.com" method="post" enctype="text/plain">
+                <input type="text" placeholder="Your Name" required style="margin-bottom:10px; padding:10px;">
+                <textarea rows="4" placeholder="Your Message" required style="padding:10px;"></textarea>
+                <button type="submit" class="submit-btn">Send Email ✉️</button>
+            </form>
+        </div>
+
+        <div class="dashboard">
+            <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
+            <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
+            <div class="dash-item"><h3>ERP</h3><p>Expert</p></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() { document.body.classList.toggle('dark-theme'); }
+        
+        let currentIndex = 0;
+        setInterval(() => {
+            const slider = document.getElementById('slider');
+            currentIndex = (currentIndex + 1) % 4;
+            slider.style.transform = `translateX(-${currentIndex * 25}%)`;
+        }, 4000);
+    </script>
+</body>
+</html>
