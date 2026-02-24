@@ -8,54 +8,43 @@
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --input-bg: #fff; }
         .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; --input-bg: #2d2d2d; }
         
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; padding-bottom: 80px; }
         
-        /* ডার্ক মোড বাটন */
-        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; }
 
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
-        /* প্রোফাইল পিকচার ফিক্স */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        .profile-img-container { 
-            width: 200px; height: 200px; margin: 0 auto 20px; 
-            border-radius: 50%; border: 6px solid var(--primary); background: #fff; 
-            overflow: hidden; display: flex; align-items: center; justify-content: center; 
-        }
+        .profile-img-container { width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 50%; border: 6px solid var(--primary); overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         
-        h1 { margin: 10px 0 5px; font-size: 2.5em; font-weight: 800; color: var(--dark); }
-        .tagline { color: var(--primary); font-size: 1.3em; font-weight: bold; }
-
         .section { padding: 40px; border-bottom: 1px solid #eee; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* স্কিল বার */
-        .skill-container { margin-bottom: 15px; }
-        .skill-name { font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 5px; }
-        .skill-bar { height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; }
-        .skill-progress { height: 100%; background: var(--primary); border-radius: 5px; }
+        /* প্রজেক্ট কার্ড স্টাইল (New Development) */
+        .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .project-card { background: var(--bg); border: 1px solid #ddd; padding: 20px; border-radius: 12px; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .project-card h4 { margin-top: 0; color: var(--primary); }
+        .project-card p { font-size: 0.9em; margin-bottom: 0; }
+
+        /* স্টিকি ফুটার বাটন */
+        .sticky-footer { position: fixed; bottom: 0; width: 100%; background: var(--dark); padding: 15px 0; display: flex; justify-content: center; gap: 20px; z-index: 1000; }
+        .action-btn { padding: 10px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; display: flex; align-items: center; gap: 8px; }
 
         /* স্লাইডার */
-        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; margin-top: 10px; }
+        .slider-container { position: relative; width: 100%; height: 350px; overflow: hidden; border-radius: 15px; }
         .slides { display: flex; width: 400%; height: 100%; transition: transform 0.6s ease-in-out; }
         .slide { width: 25%; height: 100%; position: relative; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
         .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center; }
 
-        /* কন্টাক্ট ফর্ম */
-        .contact-form { display: grid; gap: 15px; }
-        .form-group { display: flex; flex-direction: column; }
-        .form-group input, .form-group textarea { padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: var(--input-bg); color: var(--text); }
-        .submit-btn { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-
-        .dashboard { background: #1a1a1a; color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
-        .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
+        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } .dashboard { grid-template-columns: 1fr; gap: 20px; } }
     </style>
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Mode</button>
 
     <div class="main-container">
         <div class="profile-header">
@@ -64,26 +53,27 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
-            <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="skill-container">
-                <div class="skill-name"><span>Ibos ERP</span><span>95%</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
-            </div>
-            <div class="skill-container">
-                <div class="skill-name"><span>Inventory Management</span><span>90%</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Certification</h2>
-            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--primary);">
-                <h4>PGD in Supply Chain Management</h4>
-                <p><b>ABP - Academy of Business Professionals</b></p>
+            <h2 class="section-title">Key Projects & Achievements</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>ERP Implementation</h4>
+                    <p>Successfully led the transition to Ibos ERP across multiple warehouse locations, improving reporting speed by 40%.</p>
+                </div>
+                <div class="project-card">
+                    <h4>Inventory Optimization</h4>
+                    <p>Reduced dead stock by 15% through the implementation of advanced FIFO and cycle counting techniques.</p>
+                </div>
+                <div class="project-card">
+                    <h4>Logistics Efficiency</h4>
+                    <p>Streamlined distribution routes for Khaas Food, resulting in a 10% reduction in delivery lead time.</p>
+                </div>
+                <div class="project-card">
+                    <h4>Audit Success</h4>
+                    <p>Maintained 99.5% stock accuracy in annual third-party audits for Akij Resources Limited.</p>
+                </div>
             </div>
         </div>
 
@@ -98,21 +88,15 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="section">
-            <h2 class="section-title">Contact Me</h2>
-            <form class="contact-form" action="mailto:abdullahmamun3993@gmail.com" method="post" enctype="text/plain">
-                <input type="text" placeholder="Your Name" required style="margin-bottom:10px; padding:10px;">
-                <textarea rows="4" placeholder="Your Message" required style="padding:10px;"></textarea>
-                <button type="submit" class="submit-btn">Send Email ✉️</button>
-            </form>
-        </div>
-
-        <div class="dashboard">
-            <div class="dash-item"><h3>99%</h3><p>Accuracy</p></div>
-            <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
-            <div class="dash-item"><h3>ERP</h3><p>Expert</p></div>
-        </div>
+    <div class="sticky-footer">
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="action-btn" style="background: #0077b5;">
+            LinkedIn
+        </a>
+        <a href="Abdullah CV.pdf.pdf" download class="action-btn" style="background: #ff5722;">
+            Download CV
+        </a>
     </div>
 
     <script>
@@ -123,7 +107,7 @@
             const slider = document.getElementById('slider');
             currentIndex = (currentIndex + 1) % 4;
             slider.style.transform = `translateX(-${currentIndex * 25}%)`;
-        }, 4000);
+        }, 5000);
     </script>
 </body>
 </html>
