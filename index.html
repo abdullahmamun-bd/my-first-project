@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | MD. ABDULLAH AL MAMUN</title>
+    <title>MD. ABDULLAH AL MAMUN | SCM Professional</title>
     <style>
         :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f8f9fa; --text: #333; --white: #ffffff; }
         .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; }
@@ -14,7 +14,7 @@
 
         .main-container { max-width: 950px; margin: 30px auto; background: var(--white); border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); overflow: hidden; }
         
-        /* Profile Section */
+        /* Profile Header */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 2px solid #eee; background: linear-gradient(to bottom, #f1f8e9, var(--white)); }
         .profile-img-container { width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 50%; border: 5px solid var(--primary); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
@@ -25,19 +25,20 @@
         .section { padding: 40px; border-bottom: 1px solid #f0f0f0; }
         .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* Experience & Education Details */
-        .info-card { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid #ddd; }
+        /* Experience & Education Card */
+        .info-card { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid #ddd; transition: 0.3s; }
+        .info-card:hover { border-left-color: var(--primary); }
         .info-title { font-weight: bold; font-size: 1.25em; color: var(--dark); margin-bottom: 5px; }
         .info-subtitle { color: var(--primary); font-weight: 600; font-size: 1.05em; display: block; margin-bottom: 8px; }
         .info-desc { margin: 0; text-align: justify; font-size: 1em; color: #555; }
         .dark-theme .info-desc { color: #bbb; }
 
-        /* Akij Special Project Box */
+        /* Professional Highlights */
         .special-highlight { background: #e8f5e9; padding: 20px; border-radius: 10px; border: 1px solid var(--primary); margin-top: 15px; }
         .dark-theme .special-highlight { background: #1b3320; }
 
         /* Slider */
-        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; margin-top: 10px; }
+        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; }
         .slides { display: flex; width: 400%; height: 100%; transition: transform 0.6s ease-in-out; }
         .slide { width: 25%; height: 100%; position: relative; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
@@ -53,7 +54,7 @@
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Dark/Light</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Dark/Light Mode</button>
 
     <div class="main-container">
         <div class="profile-header">
@@ -62,59 +63,63 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
-            <p>📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
+            <p>📧 abdullahmamun3993@gmail.com | 📞 +880 1535-725075</p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Core Competencies</h2>
+            <p style="text-align: justify; margin-bottom: 20px;">
+                একজন দক্ষ Supply Chain পেশাদার হিসেবে আমার ১০ বছরেরও বেশি অভিজ্ঞতা রয়েছে। <b>Ibos ERP</b> সিস্টেমে আমার বিশেষ পারদর্শিতা রয়েছে এবং আমি বড় পরিসরে ইনভেন্টরি ও ওয়্যারহাউস অপারেশনে সফলভাবে নেতৃত্ব দিয়েছি।
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
             
             <div class="info-card">
                 <div class="info-title">Senior Executive – Supply Chain</div>
-                <span class="info-subtitle">Herfy Bangladesh (Greenwich Dairy Limited) | Mar 2026 - Present</span>
-                <p class="info-desc">সরাসরি সাপ্লাই চেইন ম্যানেজমেন্ট, প্রকিউরমেন্ট এবং ডিস্ট্রিবিউশন নেটওয়ার্ক তদারকি।</p>
+                <span class="info-subtitle">Herfy Bangladesh (Greenwich Dairy Limited) | March 2026 - Present</span>
             </div>
 
             <div class="info-card">
                 <div class="info-title">Executive – Warehouse & SCM</div>
-                <span class="info-subtitle">Khaas Food Limited | 2025 - 2026</span>
-                <p class="info-desc">Ibos ERP-এর মাধ্যমে ইনভেন্টরি কন্ট্রোল, অডিট এবং ওয়্যারহাউস অটোমেশন নিশ্চিতকরণ।</p>
+                <span class="info-subtitle">Khaas Food Limited | Jan 2025 - Feb 2026</span>
             </div>
 
             <div class="info-card">
                 <div class="info-title">Senior Store Officer</div>
                 <span class="info-subtitle">Eon Group of Industries | Dec 2023 - May 2025</span>
-                <p class="info-desc">সফলভাবে সাপ্লাই চেইন অপারেশন পরিচালনা এবং রিসোর্স অপ্টিমাইজেশন।</p>
             </div>
 
             <div class="info-card">
                 <div class="info-title">Assistant Officer – Store</div>
                 <span class="info-subtitle">Akij Resources Limited (Akij Group) | 2017 - 2023</span>
                 <div class="special-highlight">
-                    <strong>★ Major Achievement: Akij Ready Mix Plant-3</strong><br>
-                    আমি এই প্রজেক্টের শুরু থেকে **Project Management, Development, এবং Inventory Management** এর পূর্ণ দায়িত্বে ছিলাম। সাপ্লাই চেইন সেটআপ এবং ইনভেন্টরি মডেল তৈরিতে সরাসরি কাজ করেছি।
+                    <strong>Major Milestone: Akij Ready Mix Plant-3</strong><br>
+                    আমি এই প্রজেক্টের শুরু থেকে <b>Project Management, Development, এবং Inventory Management</b> এর সরাসরি দায়িত্বে ছিলাম। প্ল্যান্টের পুরো সাপ্লাই চেইন সেটআপ আমার তত্ত্বাবধানে সম্পন্ন হয়েছে।
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Academic Qualifications</h2>
+            <h2 class="section-title">Education & Certification</h2>
             
             <div class="info-card">
-                <div class="info-title">Post Graduate Diploma (PGD) in SCM</div>
+                <div class="info-title">Post Graduate Diploma (PGD) in Logistics & Supply Chain Management</div>
                 <span class="info-subtitle">Academy of Business Professionals (ABP)</span>
-                <p class="info-desc">Supply Chain Management-এ প্রফেশনাল ডিপ্লোমা এবং স্ট্র্যাটেজিক লজিস্টিক্সে বিশেষ দক্ষতা অর্জন।</p>
+                <p class="info-desc">এটি একটি পেশাদার সার্টিফিকেট কোর্স যা সরাসরি গ্লোবাল সাপ্লাই চেইন স্ট্যান্ডার্ড এবং লজিস্টিক ম্যানেজমেন্টের ওপর ফোকাস করে।</p>
             </div>
 
             <div class="info-card">
                 <div class="info-title">Master of Business Administration (MBA)</div>
                 <span class="info-subtitle">Major in Supply Chain Management</span>
-                <p class="info-desc">সাপ্লাই চেইন থিওরি এবং অপারেশনাল স্ট্র্যাটেজির ওপর উচ্চতর শিক্ষা।</p>
+                <p class="info-desc">সাপ্লাই চেইন স্ট্র্যাটেজি এবং বিজনেস অপারেশনের ওপর মাস্টার্স সম্পন্ন।</p>
             </div>
 
             <div class="info-card">
-                <div class="info-title">Bachelor of Business Studies (BBS)</div>
-                <span class="info-subtitle">National University of Bangladesh</span>
-                <p class="info-desc">ব্যবসায়িক শিক্ষা এবং হিসাববিজ্ঞানের ওপর স্নাতক ডিগ্রি অর্জন।</p>
+                <div class="info-title">BA (Honors) in Islamic Studies</div>
+                <span class="info-subtitle">Govt. Bangla College, Dhaka</span>
+                <p class="info-desc">জাতীয় বিশ্ববিদ্যালয়ের অধীনে ঢাকার অন্যতম নামকরা প্রতিষ্ঠান <b>সরকারি বাঙলা কলেজ</b> থেকে স্নাতক সম্পন্ন।</p>
             </div>
         </div>
 
@@ -122,24 +127,24 @@
             <h2 class="section-title">Career Milestones</h2>
             <div class="slider-container">
                 <div class="slides" id="slider">
-                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources Legacy</div></div>
+                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources Limited</div></div>
                     <div class="slide"><img src="pic2.jpeg" alt="Eon"><div class="slide-caption">Eon Group Success</div></div>
                     <div class="slide"><img src="pic3.jpeg" alt="Khaas"><div class="slide-caption">Khaas Food Journey</div></div>
-                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class="slide-caption">Professional Excellence</div></div>
+                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class="slide-caption">Professional Achievements</div></div>
                 </div>
             </div>
         </div>
 
         <div class="dashboard">
-            <div class="dash-item"><h3>99.5%</h3><p>Accuracy</p></div>
+            <div class="dash-item"><h3>99.5%</h3><p>Stock Accuracy</p></div>
             <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
             <div class="dash-item"><h3>ERP</h3><p>Expertise</p></div>
         </div>
     </div>
 
     <div class="sticky-footer">
-        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="btn" style="background:#0077b5;">LinkedIn</a>
-        <a href="mailto:abdullahmamun3993@gmail.com" class="btn" style="background:var(--primary);">Contact Now</a>
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="btn" style="background:#0077b5;">LinkedIn Profile</a>
+        <a href="mailto:abdullahmamun3993@gmail.com" class="btn" style="background:var(--primary);">Email Me Now</a>
         <a href="Abdullah CV.pdf.pdf" download class="btn" style="background:#ff5722;">Download CV</a>
     </div>
 
