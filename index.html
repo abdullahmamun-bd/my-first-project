@@ -3,44 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN | SCM Expert</title>
+    <title>MD. ABDULLAH AL MAMUN | SCM Expert Portfolio</title>
     <style>
-        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --card-bg: #ffffff; }
-        .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; --card-bg: #2d2d2d; }
+        :root { --primary: #2ea44f; --dark: #1a1a1a; --bg: #f4f7f6; --text: #333; --white: #ffffff; --card: #ffffff; }
+        .dark-theme { --bg: #121212; --text: #e0e0e0; --white: #1e1e1e; --dark: #ffffff; --card: #2d2d2d; }
         
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; padding-bottom: 80px; }
         
-        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
         .main-container { max-width: 900px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         
+        /* প্রোফাইল সেকশন */
         .profile-header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        .profile-img-container { width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 50%; border: 6px solid var(--primary); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .profile-img-container { width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 50%; border: 6px solid var(--primary); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fff; }
         .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         
+        h1 { margin: 10px 0 5px; font-size: 2.2em; font-weight: 800; color: var(--dark); }
+        .tagline { color: var(--primary); font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+        .contact-top { font-size: 0.9em; color: #666; }
+
         .section { padding: 40px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 1.6em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
+        .section-title { font-size: 1.5em; color: var(--primary); margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 15px; text-transform: uppercase; font-weight: bold; }
 
-        /* আকিজ রেডিমিক্স প্রজেক্ট স্টাইল */
-        .special-project { background: linear-gradient(135deg, #e8f5e9, #ffffff); border: 2px solid var(--primary); padding: 25px; border-radius: 15px; margin-bottom: 30px; }
-        .special-project h4 { margin-top: 0; color: #1b5e20; font-size: 1.4em; }
+        /* স্কিল বার */
+        .skill-container { margin-bottom: 15px; }
+        .skill-name { font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .skill-bar { height: 8px; background: #ddd; border-radius: 5px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--primary); border-radius: 5px; }
 
-        .edu-item { margin-bottom: 20px; }
-        .edu-title { font-weight: bold; font-size: 1.2em; color: var(--dark); }
-        .edu-inst { color: var(--primary); font-weight: 600; }
+        /* ক্যারিয়ার টাইমলাইন */
+        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--primary); position: relative; }
+        .job-title { font-weight: bold; font-size: 1.2em; color: var(--dark); }
+        .company-name { color: var(--primary); font-weight: 600; }
 
-        .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .project-card { background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid #ddd; }
+        /* আকিজ রেডিমিক্স স্পেশাল প্রজেক্ট */
+        .special-box { background: rgba(46, 164, 79, 0.1); border: 1px dashed var(--primary); padding: 20px; border-radius: 12px; margin-top: 15px; }
 
+        /* স্লাইডার */
+        .slider-container { position: relative; width: 100%; height: 350px; overflow: hidden; border-radius: 15px; }
+        .slides { display: flex; width: 400%; height: 100%; transition: transform 0.6s ease-in-out; }
+        .slide { width: 25%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center; }
+
+        /* ড্যাশবোর্ড */
+        .dashboard { background: #1a1a1a; color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px; text-align: center; }
+        .dash-item h3 { font-size: 2em; color: var(--primary); margin: 0; }
+
+        /* স্টিকি ফুটার */
         .sticky-footer { position: fixed; bottom: 0; width: 100%; background: var(--dark); padding: 15px 0; display: flex; justify-content: center; gap: 20px; z-index: 1000; }
-        .action-btn { padding: 10px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; }
+        .action-btn { padding: 10px 20px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; }
 
-        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .dashboard { grid-template-columns: 1fr; gap: 20px; } }
     </style>
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Mode</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
 
     <div class="main-container">
         <div class="profile-header">
@@ -49,55 +69,79 @@
             </div>
             <h1>MD. ABDULLAH AL MAMUN</h1>
             <p class="tagline">Senior Executive - Supply Chain</p>
+            <p class="contact-top">📞 +880 1535-725075 | 📧 abdullahmamun3993@gmail.com</p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Major Project Highlight</h2>
-            <div class="special-project">
-                <h4>Akij Ready Mix Plant-3</h4>
-                <p>আমি সরাসরি এই প্রজেক্টের <b>Project Management, Project Development, এবং Inventory Management</b> এর দায়িত্ব পালন করেছি। প্ল্যান্টের শুরু থেকে অপারেশনাল পর্যায় পর্যন্ত ইনভেন্টরি কন্ট্রোল এবং রিসোর্স অপ্টিমাইজেশনে গুরুত্বপূর্ণ ভূমিকা রেখেছি।</p>
-            </div>
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skill-container"><div class="skill-name"><span>Ibos ERP System</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div></div>
+            <div class="skill-container"><div class="skill-name"><span>Warehouse Management</span><span>92%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div></div>
+            <div class="skill-container"><div class="skill-name"><span>Inventory Control</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div></div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="edu-item">
-                <div class="edu-title">Masters of Business Administration (MBA)</div>
-                <div class="edu-inst">Major in Supply Chain Management</div>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="exp-item">
+                <div class="job-title">Senior Executive – Supply Chain</div>
+                <div class="company-name">Herfy Bangladesh | March 2026 - Present</div>
             </div>
-            <div class="edu-item">
-                <div class="edu-title">Post Graduate Diploma (PGD)</div>
-                <div class="edu-inst">Academy of Business Professionals (ABP)</div>
+            <div class="exp-item">
+                <div class="job-title">Executive – Warehouse & SCM</div>
+                <div class="company-name">Khaas Food Limited | 2025 - 2026</div>
             </div>
-            <div class="edu-item">
-                <div class="edu-title">Bachelor of Science / Business Studies</div>
-                <div class="edu-inst">National University of Bangladesh</div>
+            <div class="exp-item">
+                <div class="job-title">Senior Store Officer</div>
+                <div class="company-name">Eon Group of Industries | 2023 - 2025</div>
             </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Other Achievements</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>ERP Optimization</h4>
-                    <p>সফলভাবে Ibos ERP সিস্টেম পরিচালনা ও স্টকের স্বচ্ছতা নিশ্চিতকরণ।</p>
-                </div>
-                <div class="project-card">
-                    <h4>Warehouse Efficiency</h4>
-                    <p>আকিজ গ্রুপে থাকাকালীন স্টোর অপারেশন অপ্টিমাইজেশন।</p>
+            <div class="exp-item">
+                <div class="job-title">Assistant Officer – Store</div>
+                <div class="company-name">Akij Resources Limited | 2017 - 2023</div>
+                <div class="special-box">
+                    <strong>Special Project: Akij Ready Mix Plant-3</strong><br>
+                    Project Management, Project Development এবং Inventory Management-এ সরাসরি নেতৃত্ব দান।
                 </div>
             </div>
         </div>
 
+        <div class="section">
+            <h2 class="section-title">Education & Certification</h2>
+            <p>🎓 <b>MBA in Supply Chain Management</b> - National University</p>
+            <p>🎓 <b>PGD in Supply Chain Management</b> - Academy of Business Professionals (ABP)</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Career Milestones</h2>
+            <div class="slider-container">
+                <div class="slides" id="slider">
+                    <div class="slide"><img src="pic1.jpeg" alt="Akij"><div class="slide-caption">Akij Resources</div></div>
+                    <div class="slide"><img src="pic2.jpeg" alt="Eon"><div class="slide-caption">Eon Group</div></div>
+                    <div class="slide"><img src="pic3.jpeg" alt="Khaas"><div class="slide-caption">Khaas Food</div></div>
+                    <div class="slide"><img src="pic4.jpeg" alt="Farewell"><div class="slide-caption">Professional Success</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="dash-item"><h3>99.5%</h3><p>Stock Accuracy</p></div>
+            <div class="dash-item"><h3>10+ Yrs</h3><p>Experience</p></div>
+            <div class="dash-item"><h3>ERP</h3><p>Expert User</p></div>
+        </div>
     </div>
 
     <div class="sticky-footer">
         <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="action-btn" style="background: #0077b5;">LinkedIn</a>
+        <a href="mailto:abdullahmamun3993@gmail.com" class="action-btn" style="background: var(--primary);">Email Me</a>
         <a href="Abdullah CV.pdf.pdf" download class="action-btn" style="background: #ff5722;">Download CV</a>
     </div>
 
     <script>
         function toggleTheme() { document.body.classList.toggle('dark-theme'); }
+        let currentIndex = 0;
+        setInterval(() => {
+            const slider = document.getElementById('slider');
+            currentIndex = (currentIndex + 1) % 4;
+            slider.style.transform = `translateX(-${currentIndex * 25}%)`;
+        }, 5000);
     </script>
 </body>
 </html>
