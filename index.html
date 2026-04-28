@@ -3,240 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN | SCM Expert</title>
+    <title>MD. ABDULLAH AL MAMUN | SCM Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { 
-            --primary: #00897b; 
-            --secondary: #26a69a;
-            --accent: #ffab40;
-            --dark: #121212; 
-            --glass: rgba(255, 255, 255, 0.9);
-            --text: #2c3e50; 
-        }
-        
-        .dark-theme { 
-            --bg: #0a0a0a; 
-            --text: #f0f0f0; 
-            --glass: rgba(30, 30, 30, 0.9);
-            --dark: #ffffff; 
+        :root {
+            --primary: #00695c;
+            --secondary: #004d40;
+            --accent: #ffa000;
+            --bg-light: #f4f7f6;
+            --text-main: #2c3e50;
+            --white: #ffffff;
         }
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--text); 
-            margin: 0; padding: 0; scroll-behavior: smooth;
-            padding-bottom: 90px;
+        .dark-mode {
+            --bg-light: #121212;
+            --text-main: #e0e0e0;
+            --white: #1e1e1e;
+            --primary: #26a69a;
         }
 
-        /* Animated Progress Bar */
-        .progress-container { position: fixed; top: 0; z-index: 1001; width: 100%; height: 5px; background: #ccc; }
-        .progress-bar { height: 5px; background: var(--primary); width: 0%; }
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg-light); color: var(--text-main); margin: 0; line-height: 1.6; }
 
-        .theme-toggle { 
-            position: fixed; top: 20px; right: 20px; z-index: 1000; 
-            background: var(--primary); color: white; border: none; 
-            padding: 10px 20px; border-radius: 30px; cursor: pointer; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;
-        }
+        /* Floating Nav */
+        .top-nav { position: fixed; top: 0; width: 100%; background: var(--white); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-links a { text-decoration: none; color: var(--text-main); margin-left: 20px; font-weight: 600; font-size: 0.9em; }
 
-        .main-container { 
-            max-width: 1000px; margin: 40px auto; 
-            background: var(--glass); backdrop-filter: blur(10px);
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
+        /* Hero Section */
+        .hero { padding: 120px 20px 60px; text-align: center; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); margin-bottom: 20px; object-fit: cover; }
+        .hero h1 { font-size: 2.5em; margin: 10px 0; letter-spacing: 1px; }
+        .hero p { font-size: 1.2em; opacity: 0.9; }
 
-        /* Header with Animation */
-        .profile-header { 
-            padding: 60px 20px; text-align: center; 
-            background: linear-gradient(rgba(0,137,123,0.1), rgba(255,255,255,0));
-        }
+        .container { max-width: 1100px; margin: -50px auto 100px; background: var(--white); border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
-        .profile-img-container { 
-            width: 190px; height: 190px; margin: 0 auto 25px; 
-            border-radius: 50%; border: 6px solid var(--primary); 
-            overflow: hidden; transition: transform 0.5s;
-        }
-        .profile-img-container:hover { transform: scale(1.05) rotate(5deg); }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+        .section-title { font-size: 1.8em; color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 30px; text-transform: uppercase; }
 
-        h1 { margin: 10px 0; font-size: 2.8em; color: var(--primary); letter-spacing: -1px; }
-        .tagline { 
-            font-size: 1.4em; font-weight: 600; color: #555; 
-            margin-bottom: 20px; display: block;
-        }
+        /* Skills Matrix */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .skill-item { background: var(--bg-light); padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #ddd; }
+        .skill-item i { font-size: 1.5em; color: var(--primary); margin-bottom: 10px; display: block; }
 
-        .section { padding: 50px 40px; }
-        .section-title { 
-            font-size: 1.8em; color: var(--primary); margin-bottom: 30px; 
-            border-bottom: 3px solid var(--primary); display: inline-block;
-        }
+        /* Timeline Style for Experience */
+        .timeline { position: relative; border-left: 3px solid var(--primary); padding-left: 30px; margin-left: 20px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -41.5px; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--white); }
+        .job-title { font-size: 1.3em; font-weight: bold; color: var(--primary); }
+        .company-name { font-weight: 600; color: #666; display: block; margin-bottom: 10px; }
+        .job-desc { text-align: justify; font-size: 0.95em; }
 
-        /* Experience Cards */
-        .experience-box { 
-            position: relative; padding-left: 30px; 
-            border-left: 2px solid var(--secondary); margin-bottom: 30px;
-        }
-        .experience-box::before {
-            content: ''; position: absolute; left: -9px; top: 0;
-            width: 16px; height: 16px; background: var(--primary); border-radius: 50%;
-        }
+        /* Education Card */
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .edu-card { background: var(--bg-light); padding: 20px; border-radius: 15px; position: relative; }
+        .edu-card h4 { margin-top: 0; color: var(--primary); }
 
-        .card-title { font-size: 1.4em; font-weight: bold; color: #333; }
-        .dark-theme .card-title { color: #fff; }
-        .card-meta { color: var(--primary); font-weight: 600; margin-bottom: 10px; display: block; }
-
-        /* Stats Dashboard */
-        .stats-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; background: var(--primary); padding: 40px; color: white;
-        }
-        .stat-item h3 { font-size: 2.5em; margin: 0; color: var(--accent); }
-
-        /* Modern Slider */
-        .milestone-slider { 
-            width: 100%; border-radius: 15px; overflow: hidden; 
-            position: relative; height: 450px; 
-        }
-        .slide-track { display: flex; transition: 0.8s cubic-bezier(0.45, 0, 0.55, 1); height: 100%; }
-        .single-slide { min-width: 100%; position: relative; }
-        .single-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .caption-overlay { 
-            position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            width: 100%; color: white; padding: 40px 20px 20px; text-align: center;
-        }
+        /* Professional Dashboard */
+        .dash-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #1a1a1a; color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .dash-board h2 { color: var(--accent); margin: 0; font-size: 2em; }
 
         /* Footer */
-        .footer-nav { 
-            position: fixed; bottom: 0; width: 100%; background: rgba(18,18,18,0.95); 
-            backdrop-filter: blur(10px); padding: 15px 0; display: flex; 
-            justify-content: center; gap: 15px; z-index: 1000; 
-        }
-        .nav-btn { 
-            padding: 12px 25px; border-radius: 8px; text-decoration: none; 
-            color: white; font-weight: 600; transition: 0.3s;
-        }
-        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
+        .sticky-footer { position: fixed; bottom: 0; width: 100%; background: var(--white); padding: 15px; display: flex; justify-content: center; gap: 20px; box-shadow: 0 -5px 15px rgba(0,0,0,0.05); }
+        .btn { padding: 12px 30px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        
         @media (max-width: 768px) {
-            .section { padding: 30px 20px; }
-            h1 { font-size: 2em; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .container { margin-top: 20px; padding: 20px; }
+            .hero h1 { font-size: 1.8em; }
         }
     </style>
 </head>
-<body id="home">
+<body>
 
-    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
-    
-    <button class="theme-toggle" onclick="toggleTheme()">✨ Switch Mode</button>
+    <nav class="top-nav">
+        <div style="font-weight: bold; color: var(--primary);">AM PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="javascript:void(0)" onclick="document.body.classList.toggle('dark-mode')"><i class="fas fa-moon"></i></a>
+        </div>
+    </nav>
 
-    <div class="main-container">
-        <header class="profile-header">
-            <div class="profile-img-container">
-                <img src="https://github.com/abdullahmamun-bd.png" alt="Abdullah Al Mamun" class="profile-img">
-            </div>
-            <h1>MD. ABDULLAH AL MAMUN</h1>
-            <span class="tagline">Supply Chain & Operations Strategist</span>
-            <p>📍 Dhaka, Bangladesh | 📱 +880 1535-725075</p>
-        </header>
+    <div class="hero">
+        <img src="https://github.com/abdullahmamun-bd.png" alt="Abdullah Al Mamun" class="profile-img">
+        <h1>MD. ABDULLAH AL MAMUN</h1>
+        <p>Senior Executive — Supply Chain Management</p>
+        <p style="font-size: 0.9em; opacity: 0.8;"><i class="fas fa-envelope"></i> abdullahmamun3993@gmail.com | <i class="fas fa-phone"></i> +880 1535-725075</p>
+    </div>
 
-        <section class="section">
-            <h2 class="section-title">Professional Profile</h2>
-            <p style="font-size: 1.1em; line-height: 1.8; text-align: justify;">
-                সাপ্লাই চেইন ম্যানেজমেন্টে ১০ বছরের অভিজ্ঞতাসম্পন্ন একজন ডেডিকেটেড পেশাদার। আমি <b>Inventory Management, Procurement, এবং Warehouse Operations</b>-এ বিশেষ পারদর্শী। <b>iBos ERP</b> বাস্তবায়নে আমার সরাসরি অভিজ্ঞতা রয়েছে যা প্রতিষ্ঠানের অপারেশনাল খরচ কমিয়ে দক্ষতা বাড়াতে সাহায্য করে।
+    <div class="container">
+        
+        <section>
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="job-desc">
+                ১০ বছরেরও বেশি সময় ধরে সাপ্লাই চেইন এবং লজিস্টিকস সেক্টরে কাজ করার অভিজ্ঞতা। আমি মূলত <b>Warehouse Operations, Inventory Control,</b> এবং <b>Strategic Procurement</b>-এ দক্ষ। <b>iBos ERP</b> এবং <b>Tally</b> এর মাধ্যমে ডাটা ম্যানেজমেন্টে আমার বিশেষ পারদর্শিতা রয়েছে। আমি নিজেকে একজন সমস্যা সমাধানকারী এবং টিম লিডার হিসেবে প্রতিষ্ঠিত করতে পেরেছি।
             </p>
         </section>
 
-        <section class="section" style="background: rgba(0,0,0,0.02);">
-            <h2 class="section-title">Career Journey</h2>
-            
-            <div class="experience-box">
-                <div class="card-title">Senior Executive – Supply Chain</div>
-                <span class="card-meta">Herfy Bangladesh | March 2026 - Present</span>
-                <p>বর্তমানে প্রকিউরমেন্ট এবং টেকনিক্যাল এক্সেসরিজ ম্যানেজমেন্টের দায়িত্বে নিয়োজিত।</p>
-            </div>
-
-            <div class="experience-box">
-                <div class="card-title">Executive – Warehouse & SCM</div>
-                <span class="card-meta">Khaas Food Limited | 2025 - 2026</span>
-            </div>
-
-            <div class="experience-box">
-                <div class="card-title">Assistant Officer (Akij Ready Mix Plant-3)</div>
-                <span class="card-meta">Akij Resources Limited | 2017 - 2023</span>
-                <p><i>Milestone:</i> এই প্রজেক্টের শুরু থেকে ইনভেন্টরি কন্ট্রোল এবং লজিস্টিকস সেটআপের প্রধান দায়িত্বে ছিলাম।</p>
+        <section>
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-boxes-stacked"></i>Inventory Control</div>
+                <div class="skill-item"><i class="fas fa-truck-loading"></i>Warehouse Mgt</div>
+                <div class="skill-item"><i class="fas fa-file-invoice-dollar"></i>ERP Excellence</div>
+                <div class="skill-item"><i class="fas fa-users-cog"></i>Team Leadership</div>
+                <div class="skill-item"><i class="fas fa-chart-line"></i>Process Optm.</div>
+                <div class="skill-item"><i class="fas fa-microchip"></i>IT Procurement</div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">Academic Excellence</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <div style="padding: 20px; border: 1px dashed var(--primary); border-radius: 12px;">
-                    <h4 style="margin: 0; color: var(--primary);">PGD in Logistics & SCM</h4>
-                    <p style="margin: 5px 0 0;">Academy of Business Professionals</p>
+        <section>
+            <h2 class="section-title">Experience Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="job-title">Senior Executive – Supply Chain</span>
+                    <span class="company-name">Herfy Bangladesh | Mar 2026 – Present</span>
+                    <p class="job-desc">বর্তমানে সাপ্লাই চেইনের প্রধান কার্যক্রম, প্রকিউরমেন্ট এবং টেকনিক্যাল এক্সেসরিজ ম্যানেজমেন্টের দায়িত্বে কাজ করছি।</p>
                 </div>
-                <div style="padding: 20px; border: 1px dashed var(--primary); border-radius: 12px;">
-                    <h4 style="margin: 0; color: var(--primary);">BA (Honors) in Islamic Studies</h4>
-                    <p style="margin: 5px 0 0;">Govt. Bangla College, Dhaka</p>
+                <div class="timeline-item">
+                    <span class="job-title">Executive – Warehouse & SCM</span>
+                    <span class="company-name">Khaas Food Limited | Jan 2025 – Feb 2026</span>
+                    <p class="job-desc">পুরো ওয়্যারহাউস অপারেশন এবং ইনভেন্টরি অডিট তদারকি করতাম।</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Gallery & Achievements</h2>
-            <div class="milestone-slider">
-                <div class="slide-track" id="slider">
-                    <div class="single-slide">
-                        <img src="pic1.jpeg" alt="Work">
-                        <div class="caption-overlay"><h3>Professional Environment</h3></div>
-                    </div>
-                    <div class="single-slide">
-                        <img src="pic2.jpeg" alt="Project">
-                        <div class="caption-overlay"><h3>Project Management Success</h3></div>
-                    </div>
-                    <div class="single-slide">
-                        <img src="pic3.jpeg" alt="Team">
-                        <div class="caption-overlay"><h3>Leadership & Teamwork</h3></div>
-                    </div>
+                <div class="timeline-item">
+                    <span class="job-title">Senior Store Officer</span>
+                    <span class="company-name">Eon Group of Industries | Dec 2023 – May 2025</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="job-title">Assistant Officer (Akij Ready Mix Plant-3)</span>
+                    <span class="company-name">Akij Resources Ltd. (Akij Group) | 2017 – 2023</span>
+                    <p class="job-desc"><b>Key Achievement:</b> প্ল্যান্টের প্রজেক্ট শুরু থেকে অপারেশন পর্যন্ত ইনভেন্টরি এবং লজিস্টিকসের পূর্ণ দায়িত্ব পালন।</p>
                 </div>
             </div>
         </section>
 
-        <div class="stats-grid">
-            <div class="stat-item"><h3>10+</h3><p>Years Experience</p></div>
-            <div class="stat-item"><h3>99%</h3><p>Inventory Accuracy</p></div>
-            <div class="stat-item"><h3>ERP</h3><p>System Expert</p></div>
+        <section>
+            <h2 class="section-title">Academic Background</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4>PGD in Logistics & SCM</h4>
+                    <p>Academy of Business Professionals (ABP)</p>
+                    <small>Professional Certification focusing on Global SCM Standards.</small>
+                </div>
+                <div class="edu-card">
+                    <h4>BA (Honors) in Islamic Studies</h4>
+                    <p>Govt. Bangla College, Dhaka</p>
+                    <small>National University of Bangladesh.</small>
+                </div>
+            </div>
+        </section>
+
+        <div class="dash-board">
+            <div><h2>10+</h2><p>Years Experience</p></div>
+            <div><h2>99.9%</h2><p>Stock Accuracy</p></div>
+            <div><h2>1.5K+</h2><p>LinkedIn Connect</p></div>
         </div>
+
     </div>
 
-    <nav class="footer-nav">
-        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" target="_blank" class="nav-btn" style="background:#0077b5;">LinkedIn</a>
-        <a href="mailto:abdullahmamun3993@gmail.com" class="nav-btn" style="background:var(--primary);">Contact Me</a>
-        <a href="Abdullah CV.pdf" download class="nav-btn" style="background:var(--accent);">Get Resume (PDF)</a>
-    </nav>
+    <div class="sticky-footer">
+        <a href="https://linkedin.com/in/abdullah-al-mamun-529313236" class="btn" style="background:#0077b5;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:abdullahmamun3993@gmail.com" class="btn" style="background:var(--primary);"><i class="fas fa-envelope"></i> Email</a>
+        <a href="Abdullah CV.pdf" download class="btn" style="background:var(--accent);"><i class="fas fa-download"></i> Download CV</a>
+    </div>
 
-    <script>
-        // Dark Mode Toggle
-        function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
-        }
-
-        // Scroll Progress Bar
-        window.onscroll = function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        };
-
-        // Smooth Slider
-        let currentIdx = 0;
-        const slides = document.querySelectorAll('.single-slide');
-        setInterval(() => {
-            currentIdx = (currentIdx + 1) % slides.length;
-            document.getElementById('slider').style.transform = `translateX(-${currentIdx * 100}%)`;
-        }, 4000);
-    </script>
 </body>
 </html>
