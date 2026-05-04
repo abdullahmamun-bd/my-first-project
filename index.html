@@ -3,150 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. ABDULLAH AL MAMUN | Professional Portfolio</title>
+    <title>Executive Portfolio | MD. ABDULLAH AL MAMUN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #004d40;
             --secondary: #00796b;
             --accent: #ff8f00;
-            --light-bg: #f4f7f6;
+            --bg-light: #f4f7f6;
             --white: #ffffff;
             --text: #2d3436;
         }
 
         .dark-mode {
-            --light-bg: #121212;
+            --bg-light: #121212;
             --white: #1e1e1e;
             --text: #dfe6e9;
             --primary: #26a69a;
         }
 
-        body { font-family: 'Inter', sans-serif; background: var(--light-bg); color: var(--text); margin: 0; padding-bottom: 100px; line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text); margin: 0; padding-bottom: 100px; line-height: 1.6; }
         
         nav { position: fixed; top: 0; width: 100%; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 15px 0; }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
 
-        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 130px 20px 80px; text-align: center; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.2); object-fit: cover; margin-bottom: 15px; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 140px 20px 100px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.2); object-fit: cover; margin-bottom: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .container { max-width: 1000px; margin: -50px auto 0; background: var(--white); border-radius: 20px; padding: 50px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .container { max-width: 1050px; margin: -60px auto 0; background: var(--white); border-radius: 25px; padding: 50px; box-shadow: 0 15px 50px rgba(0,0,0,0.15); }
         
-        .section-title { font-size: 1.8em; color: var(--primary); margin: 40px 0 25px; border-left: 6px solid var(--accent); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .section-title { font-size: 1.8em; color: var(--primary); margin: 45px 0 25px; border-left: 6px solid var(--accent); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
 
-        /* Experience Detail Cards */
-        .exp-card { background: var(--light-bg); border-radius: 15px; padding: 30px; margin-bottom: 30px; border-top: 5px solid var(--primary); }
-        .comp-name { color: var(--primary); font-size: 1.5em; font-weight: 800; margin-bottom: 5px; display: block; }
-        .job-role { color: var(--accent); font-weight: 700; font-size: 1.1em; display: block; margin-bottom: 15px; }
-        .jd-list { padding-left: 20px; }
-        .jd-list li { margin-bottom: 10px; text-align: justify; }
+        /* Career Summary Highlight */
+        .summary-card { background: linear-gradient(to right, #e0f2f1, #ffffff); border-radius: 15px; padding: 35px; border-left: 8px solid var(--primary); margin-bottom: 40px; }
+        .summary-card p { font-size: 1.15em; line-height: 1.8; color: #34495e; text-align: justify; margin: 0; }
 
-        /* Photo Gallery */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; border: 2px solid #eee; height: 250px; background: #eee; position: relative; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .img-label { position: absolute; bottom: 0; background: rgba(0,0,0,0.7); color: white; width: 100%; padding: 10px; text-align: center; font-size: 0.9em; }
+        /* Special Project Section */
+        .project-highlight { background: #fff8e1; border: 2px dashed var(--accent); border-radius: 20px; padding: 35px; margin: 40px 0; position: relative; }
+        .project-badge { position: absolute; top: -15px; left: 30px; background: var(--accent); color: white; padding: 5px 20px; border-radius: 50px; font-weight: bold; text-transform: uppercase; font-size: 0.85em; }
 
-        .footer-action { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 15px 40px; border-radius: 50px; display: flex; gap: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 1000; }
-        .footer-action a { color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        /* Experience Cards */
+        .exp-card { border-bottom: 1px solid #eee; padding: 30px 0; }
+        .exp-card:last-child { border-bottom: none; }
+        .comp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .comp-name { color: var(--primary); font-size: 1.5em; font-weight: 800; }
+        .job-role { color: var(--accent); font-weight: 700; font-size: 1.1em; display: block; margin-top: 5px; }
+        .jd-list { padding-left: 20px; list-style-type: square; }
+        .jd-list li { margin-bottom: 12px; }
 
-        @media (max-width: 768px) { .container { padding: 25px; } .hero h1 { font-size: 1.8rem; } }
+        /* Beautiful Education Section */
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .edu-item { display: flex; align-items: center; background: var(--light-bg); padding: 25px; border-radius: 15px; transition: 0.3s; border: 1px solid #e0e0e0; }
+        .edu-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .edu-icon { font-size: 2.5em; color: var(--primary); margin-right: 20px; }
+        .edu-info h4 { margin: 0; color: var(--primary); font-size: 1.2em; }
+        .edu-info p { margin: 5px 0 0; font-weight: 600; color: #666; }
+
+        .footer-action { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 15px 45px; border-radius: 50px; display: flex; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; }
+        .footer-action a { color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px; font-size: 1em; }
+
+        @media (max-width: 768px) { .container { padding: 30px 20px; } .hero h1 { font-size: 1.8rem; } .comp-header { flex-direction: column; } }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <div style="font-weight: 900; color: var(--primary);">MAMUN | SCM PROFESSIONAL</div>
-            <button onclick="document.body.classList.toggle('dark-mode')" style="background:none; border:none; cursor:pointer; color:var(--primary);"><i class="fas fa-moon fa-lg"></i></button>
+            <div style="font-weight: 900; color: var(--primary); font-size: 1.2em;">ABDULLAH AL MAMUN</div>
+            <button onclick="document.body.classList.toggle('dark-mode')" style="background:none; border:none; cursor:pointer; color:var(--primary);"><i class="fas fa-adjust fa-lg"></i></button>
         </div>
     </nav>
 
     <header class="hero">
         <img src="https://github.com/abdullahmamun-bd.png" alt="Mamun" class="profile-img">
         <h1 style="margin: 10px 0;">MD. ABDULLAH AL MAMUN</h1>
-        <p style="font-size: 1.2em; opacity: 0.9;">10+ Years of Excellence in Supply Chain & Inventory Management</p>
+        <p style="font-size: 1.3em; opacity: 0.95; font-weight: 500;">Supply Chain & Inventory Management Professional</p>
     </header>
 
     <div class="container">
         
+        <!-- Detailed Career Summary -->
         <section>
-            <h2 class="section-title">Professional Experience Details</h2>
-
-            <!-- Herfy Bangladesh -->
-            <div class="exp-card">
-                <span class="comp-name">Herfy Bangladesh (Greenwich Dairy Limited)</span>
-                <span class="job-role">Senior Executive – Supply Chain | March 2026 – Present</span>
-                <ul class="jd-list">
-                    <li><b>Strategic Sourcing:</b> Leading procurement for technical accessories, furniture, and restaurant-specific equipment.</li>
-                    <li><b>Vendor Coordination:</b> Managing over 50+ local and international suppliers to ensure competitive pricing and high quality.</li>
-                    <li><b>Supply Support:</b> Coordinating with 30+ outlet managers to fulfill daily operational material requirements without delays.</li>
-                    <li><b>Cost Optimization:</b> Implementing data-driven procurement strategies to reduce annual sourcing costs by 10%.</li>
-                </ul>
+            <h2 class="section-title">Career Summary</h2>
+            <div class="summary-card">
+                <p>
+                    Accomplished <b>Supply Chain, Warehouse, and Logistics</b> professional with over <b>10 years</b> of proven expertise in managing complex operations across the food, cement, and industrial sectors. I specialize in **end-to-end procurement, strategic sourcing, and inventory optimization** through advanced ERP systems like iBos and SAP. My career is defined by a strong track record of improving stock accuracy (99.5%+), reducing operational costs, and leading large-scale greenfield projects from inception to full-scale operation. I am a dedicated leader focused on building scalable supply chain frameworks that drive organizational growth.
+                </p>
             </div>
+        </section>
 
-            <!-- Khaas Food -->
-            <div class="exp-card">
-                <span class="comp-name">Khaas Food Limited</span>
-                <span class="job-role">Executive – Warehouse & Supply Chain | Jan 2025 – Feb 2026</span>
+        <!-- Special Project Spotlight -->
+        <section>
+            <h2 class="section-title">Signature Project Spotlight</h2>
+            <div class="project-highlight">
+                <div class="project-badge">Core Achievement</div>
+                <h3 style="color: var(--primary); margin-top: 0; font-size: 1.6em;"><i class="fas fa-hard-hat"></i> Akij Ready Mix Plant-3 Setup</h3>
+                <p style="font-size: 1.1em; color: #444;">
+                    আমি এই মেগা প্রোজেক্টের একদম শুরু (Greenfield stage) থেকে সরাসরি সম্পৃক্ত ছিলাম। এটি আমার ক্যারিয়ারের অন্যতম বড় সাকসেস:
+                </p>
                 <ul class="jd-list">
-                    <li><b>Inventory System Optimization:</b> Spearheaded the transition to an automated ERP-based inventory tracking system.</li>
-                    <li><b>Warehouse Efficiency:</b> Redesigned warehouse layout for faster inbound/outbound processing and better SKU categorization.</li>
-                    <li><b>Stock Accuracy:</b> Maintained a consistent 99.5% stock accuracy rate through rigorous weekly and monthly physical audits.</li>
-                </ul>
-            </div>
-
-            <!-- Eon Group -->
-            <div class="exp-card">
-                <span class="comp-name">Eon Group of Industries Ltd.</span>
-                <span class="job-role">Senior Store Officer | 2023 – 2025</span>
-                <ul class="jd-list">
-                    <li><b>Material Management:</b> Supervised the storage and distribution of industrial raw materials and spare parts.</li>
-                    <li><b>Logistics Coordination:</b> Managed internal transport fleets to ensure on-time delivery of materials to production sites.</li>
-                </ul>
-            </div>
-
-            <!-- Akij Group -->
-            <div class="exp-card">
-                <span class="comp-name">Akij Resources Limited (Akij Group)</span>
-                <span class="job-role">Assistant Officer – Store (Akij Ready Mix Plant-3) | 2017 – 2023</span>
-                <ul class="jd-list">
-                    <li><b>Greenfield Project Setup:</b> Instrumental in the initial setup of Akij Ready Mix Plant-3, including warehouse infrastructure development.</li>
-                    <li><b>Inventory Control:</b> Managed high-volume inventory for cement, aggregates, and chemical additives.</li>
-                    <li><b>Procurement Support:</b> Worked closely with the central procurement team to streamline local purchase orders and vendor payments.</li>
+                    <li><b>Infrastructure Development:</b> পুরো প্ল্যান্টের ওয়্যারহাউস এবং স্টোর ম্যানেজমেন্ট সিস্টেমের নকশা ও বাস্তবায়ন আমার তত্ত্বাবধানে হয়েছে。</li>
+                    <li><b>Process Architecture:</b> ইনভেন্টরি কন্ট্রোল এবং লজিস্টিকস অপারেশনের জন্য নতুন SOP তৈরি ও প্রয়োগ করেছি。</li>
+                    <li><b>Resource Management:</b> বিশাল পরিমাণ সিমেন্ট, এগ্রিগেট এবং অ্যাডমিক্সচারের জন্য জিরো-এরর স্টকিং সিস্টেম নিশ্চিত করেছি。</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Visual Achievements Section -->
+        <!-- Professional Experience -->
         <section>
-            <h2 class="section-title">Milestones & Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="pic1.jpeg" alt="Work 1" onerror="this.src='https://via.placeholder.com/400x250?text=Akij+Project+Milestone'">
-                    <div class="img-label">Akij Ready Mix Plant-3 Setup</div>
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="exp-card">
+                <div class="comp-header">
+                    <div>
+                        <span class="comp-name">Herfy Bangladesh</span>
+                        <span class="job-role">Senior Executive – Supply Chain | March 2026 – Present</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="pic2.jpeg" alt="Work 2" onerror="this.src='https://via.placeholder.com/400x250?text=Khaas+Food+Audit'">
-                    <div class="img-label">Inventory Audit at Khaas Food</div>
+                <ul class="jd-list">
+                    <li>Managing procurement planning and vendor coordination for outlet operations。</li>
+                    <li>Ensuring on-time material availability through strategic sourcing of technical accessories。</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <div class="comp-header">
+                    <div>
+                        <span class="comp-name">Khaas Food Limited</span>
+                        <span class="job-role">Executive – Warehouse & SCM | 2025 – 2026</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="pic3.jpeg" alt="Work 3" onerror="this.src='https://via.placeholder.com/400x250?text=Professional+Event'">
-                    <div class="img-label">Supply Chain Coordination Event</div>
+                <ul class="jd-list">
+                    <li>Optimized inventory systems and stock accuracy through ERP-based monitoring。</li>
+                    <li>Managed end-to-end warehouse processes to improve operational visibility。</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <div class="comp-header">
+                    <div>
+                        <span class="comp-name">Eon Group of Industries Ltd.</span>
+                        <span class="job-role">Senior Store Officer | 2023 – 2025</span>
+                    </div>
                 </div>
+                <ul class="jd-list">
+                    <li>Supervised large-scale store operations and material distribution workflows。</li>
+                </ul>
             </div>
         </section>
 
+        <!-- Elegant Education Section -->
         <section>
             <h2 class="section-title">Education & Credentials</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div style="padding: 20px; background: #e0f2f1; border-radius: 10px;">
-                    <h3 style="margin-top:0; color: var(--primary);">PGD in SCM</h3>
-                    <p>Academy of Business Professionals (ABP)</p>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-info">
+                        <h4>PGD in Logistics & SCM</h4>
+                        <p>Academy of Business Professionals (ABP)</p>
+                        <small>Specialized in Global Supply Chain Standards</small>
+                    </div>
                 </div>
-                <div style="padding: 20px; background: #fff3e0; border-radius: 10px;">
-                    <h3 style="margin-top:0; color: #e65100;">BA (Honors)</h3>
-                    <p>Islamic Studies, Govt. Bangla College</p>
+                <div class="edu-item">
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <div class="edu-info">
+                        <h4>BA (Honors) in Islamic Studies</h4>
+                        <p>Govt. Bangla College, Dhaka</p>
+                        <small>National University of Bangladesh</small>
+                    </div>
                 </div>
             </div>
         </section>
